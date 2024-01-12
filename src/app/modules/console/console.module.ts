@@ -4,6 +4,13 @@ import { CommonModule } from '@angular/common';
 import { ConsoleRoutingModule } from './console-routing.module';
 import { ConsoleComponent } from './console.component';
 import {HomeModule} from "./module/home/home.module";
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {HttpClientModule} from "@angular/common/http";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -13,7 +20,16 @@ import {HomeModule} from "./module/home/home.module";
   imports: [
     CommonModule,
     ConsoleRoutingModule,
-    HomeModule
+    HomeModule,
+    MatIconModule,
+    MatButtonModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatIconModule
   ]
 })
 export class ConsoleModule { }
