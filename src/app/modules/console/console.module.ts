@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ConsoleRoutingModule } from './console-routing.module';
 import { ConsoleComponent } from './console.component';
+import {HomeModule} from "./module/home/home.module";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ConsoleComponent } from './console.component';
   ],
   imports: [
     CommonModule,
-    ConsoleRoutingModule
+    ConsoleRoutingModule,
+    HomeModule
   ]
 })
 export class ConsoleModule { }
