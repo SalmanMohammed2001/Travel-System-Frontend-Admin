@@ -13,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { AddCustomerComponent } from './components/customer/add-customer/add-customer.component';
 import { AllCustomerComponent } from './components/customer/all-customer/all-customer.component';
 import { FindCustomerComponent } from './components/customer/find-customer/find-customer.component';
+import { UpdateCustomerComponent } from './components/customer/update-customer/update-customer.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FindCustomerComponent } from './components/customer/find-customer/find-
     CustomerComponent,
     AddCustomerComponent,
     AllCustomerComponent,
-    FindCustomerComponent
+    FindCustomerComponent,
+    UpdateCustomerComponent
   ],
   exports: [
     HeaderComponent
