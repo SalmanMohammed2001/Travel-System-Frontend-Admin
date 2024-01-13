@@ -10,6 +10,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatIconModule} from "@angular/material/icon";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSnackBarModule,
     MatIconModule,
     BrowserAnimationsModule,
+    NgbModule,
 
 
   ],
