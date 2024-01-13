@@ -1,0 +1,31 @@
+form{
+  padding: 30px;
+}
+
+.full-width{
+  width: 100%
+}
+
+.img-g{
+  width: 180px!important;
+  height: 200px !important;
+  /*border: 1px solid red;*/
+
+  margin-left: 10px;
+}
+
+.img-g>img{
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 100%;
+
+}
+
+.img-g>input{
+  font-size: 10px!important;
+}
+
+.img-g>input::placeholder{
+  font-size: 10px!important;
+}

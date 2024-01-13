@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CustomerService} from "../../../../../../../service/customer.service";
 
 @Component({
   selector: 'app-update-customer',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./update-customer.component.scss']
 })
 export class UpdateCustomerComponent {
+
+  constructor(private service:CustomerService) {
+  }
+
+  searchId=''
+
+  loadData(){
+
+  }
 
 }
