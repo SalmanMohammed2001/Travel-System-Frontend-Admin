@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {PostService} from "../../../../../../../service/post.service";
 import {HttpClient} from "@angular/common/http";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {CustomerService} from "../../../../../../../service/customer.service";
 
 @Component({
   selector: 'app-add-customer',
@@ -10,7 +10,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class AddCustomerComponent implements OnInit{
 
-  constructor(private  service:PostService,private http:HttpClient) {
+  constructor(private service:CustomerService) {
   }
   ngOnInit(): void {
 
@@ -80,8 +80,9 @@ export class AddCustomerComponent implements OnInit{
     setData.append('nicRearImg',nicRearImg!)
     setData.append('profilePic',profilePic!)
 
-    this.http.post<any>('http://localhost:8081/api/v1/users',setData).subscribe(res=>{
-      console.log(res)
+
+
+    this.service.create(setData).subscribe(res=>{
       alert('save')
     })
 

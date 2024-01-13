@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
-import {PostService} from "../../../../../../service/post.service";
+
 
 
 @Component({
@@ -11,10 +11,10 @@ import {PostService} from "../../../../../../service/post.service";
 })
 export class CustomerComponent implements OnInit{
 
-  constructor(private  service:PostService,private http:HttpClient) {
+  constructor(private http:HttpClient) {
   }
   ngOnInit(): void {
-    this.findAllData()
+
   }
 
 
@@ -89,13 +89,9 @@ export class CustomerComponent implements OnInit{
 
   }
 
-  list:Array<any>=[]
 
 
-  findAllData  (){
-    this.service.findAll().subscribe(res=>{
-      this.list=res.data
-    })
-  }
+
+
 
 }

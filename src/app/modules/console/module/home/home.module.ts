@@ -8,10 +8,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import { CustomerComponent } from './components/customer/customer.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { AddCustomerComponent } from './components/customer/add-customer/add-customer.component';
 import { AllCustomerComponent } from './components/customer/all-customer/all-customer.component';
+import { FindCustomerComponent } from './components/customer/find-customer/find-customer.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AllCustomerComponent } from './components/customer/all-customer/all-cus
     FooterComponent,
     CustomerComponent,
     AddCustomerComponent,
-    AllCustomerComponent
+    AllCustomerComponent,
+    FindCustomerComponent
   ],
   exports: [
     HeaderComponent
@@ -32,7 +34,8 @@ import { AllCustomerComponent } from './components/customer/all-customer/all-cus
         MatInputModule,
         MatButtonModule,
         ReactiveFormsModule,
-         HttpClientModule
+        HttpClientModule,
+        FormsModule
     ]
 })
 export class HomeModule { }
