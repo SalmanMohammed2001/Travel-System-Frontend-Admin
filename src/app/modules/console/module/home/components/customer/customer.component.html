@@ -1,103 +1,17 @@
-<form action="" [formGroup]="form" (ngSubmit)="createData()" >
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <mat-form-field  class="full-width"   appearance="outline">
-          <mat-label>Id</mat-label>
-          <input  disabled  matInput placeholder="Id" >
-        </mat-form-field>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <mat-form-field  class="full-width"   appearance="outline">
-          <mat-label>Username</mat-label>
-          <input formControlName="username"   matInput placeholder="Username" >
-        </mat-form-field>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <mat-form-field  class="full-width"   appearance="outline">
-          <mat-label>password</mat-label>
-          <input formControlName="password"  matInput placeholder="Password" >
-        </mat-form-field>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <mat-form-field  class="full-width"   appearance="outline">
-          <mat-label>Nic</mat-label>
-          <input formControlName="nic"   matInput placeholder="Nic" >
-        </mat-form-field>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <mat-form-field  class="full-width"   appearance="outline">
-          <mat-label>Dob</mat-label>
-          <input formControlName="dob"   matInput placeholder="Dob" >
-        </mat-form-field>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Gender</mat-label>
-          <select formControlName="gender" matNativeControl required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </mat-form-field>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <mat-form-field  class="full-width"   appearance="outline">
-          <mat-label>Contact 1</mat-label>
-          <input formControlName="contact1"  matInput placeholder="Contact 1" >
-        </mat-form-field>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <mat-form-field  class="full-width"   appearance="outline">
-          <mat-label>Contact 2</mat-label>
-          <input  formControlName="contact2"  matInput placeholder="Contact 2" >
-        </mat-form-field>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <mat-form-field  class="full-width"   appearance="outline">
-          <mat-label>Email</mat-label>
-          <input  formControlName="email"   matInput placeholder="Email" >
-        </mat-form-field>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <mat-form-field  class="full-width"   appearance="outline">
-          <mat-label>Address</mat-label>
-          <input formControlName="address"  matInput placeholder="Address" >
-        </mat-form-field>
-      </div>
-    </div>
-    <hr>
-    <div class="row">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <h3>Profile Image</h3>
-        <div class="img-g">
-          <img src="" alt="" id="profilePic-img-show"> <br><br>
-          <input type="file" id="profilePic" name="profilePic" class="form-control"
-                 placeholder="Profile Image" (change)="image1($event)">
-        </div>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <h3>NicFront</h3>
-        <div class="img-g">
-          <img src="" alt="" id="nicFront-img-show"> <br><br>
-          <input type="file" id="nicFront" name="nicFront" class="form-control"
-                 placeholder="Nic Front" (change)="image2($event)">
-        </div>
-    </div>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-        <h3>NicRear</h3>
-        <div class="img-g">
-          <img src="" alt="" id="nicRear-img-show"> <br><br>
-          <input type="file" id="nicRear" name="nicRear" class="form-control"
-                 placeholder="Nic Rear" (change)="image3($event)">
-        </div>
-      </div>
+
+<div class="customer-outer">
+
+  <div class="btn-outer">
+    <button mat-raised-button routerLink="/console/customer/all">All</button> |
+    <button mat-raised-button color="accent" routerLink="find">Find</button> |
+    <button mat-raised-button color="primary" routerLink="/console/customer/new">New</button> |
+    <button mat-raised-button color="warn" routerLink="delete">Delete</button> |
+    <button mat-raised-button color="primary" routerLink="update">Update</button>
   </div>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-12 " style="display: flex;justify-content: flex-end">
-        <button mat-raised-button color="primary" >Save customer</button>
-      </div>
-    </div>
+
+  <div class="router-inner">
+    <router-outlet></router-outlet>
   </div>
-</form>
+
+</div>
+

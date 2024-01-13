@@ -1,20 +1,19 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {PostService} from "../../../../../../../service/post.service";
 import {HttpClient} from "@angular/common/http";
-import {PostService} from "../../../../../../service/post.service";
-
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-customer',
-  templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.scss']
+  selector: 'app-add-customer',
+  templateUrl: './add-customer.component.html',
+  styleUrls: ['./add-customer.component.scss']
 })
-export class CustomerComponent implements OnInit{
+export class AddCustomerComponent implements OnInit{
 
   constructor(private  service:PostService,private http:HttpClient) {
   }
   ngOnInit(): void {
-    this.findAllData()
+
   }
 
 
@@ -55,13 +54,13 @@ export class CustomerComponent implements OnInit{
     console.log(this.form)
     let username=this.form.get('username')?.value;
     let  password=this.form.get('password')?.value;
-     let nic=this.form.get('nic')?.value;
-       let dob=this.form.get('dob')?.value;
-     let  gender=this.form.get('gender')?.value;
-      let contact1=this.form.get('contact1')?.value;
-      let contact2=this.form.get('contact2')?.value;
-      let email=this.form.get('email')?.value;
-      let address=this.form.get('address')?.value;
+    let nic=this.form.get('nic')?.value;
+    let dob=this.form.get('dob')?.value;
+    let  gender=this.form.get('gender')?.value;
+    let contact1=this.form.get('contact1')?.value;
+    let contact2=this.form.get('contact2')?.value;
+    let email=this.form.get('email')?.value;
+    let address=this.form.get('address')?.value;
     let nicFrontImg=this.form.get('nicFrontImg')?.value;
     let nicRearImg=this.form.get('nicRearImg')?.value;
     let profilePic=this.form.get('profilePic')?.value
@@ -89,13 +88,6 @@ export class CustomerComponent implements OnInit{
 
   }
 
-  list:Array<any>=[]
 
-
-  findAllData  (){
-    this.service.findAll().subscribe(res=>{
-      this.list=res.data
-    })
-  }
 
 }

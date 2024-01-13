@@ -10,6 +10,8 @@ import {MatButtonModule} from "@angular/material/button";
 import { CustomerComponent } from './components/customer/customer.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { AddCustomerComponent } from './components/customer/add-customer/add-customer.component';
+import { AllCustomerComponent } from './components/customer/all-customer/all-customer.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import {HttpClientModule} from "@angular/common/http";
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    CustomerComponent
+    CustomerComponent,
+    AddCustomerComponent,
+    AllCustomerComponent
   ],
   exports: [
     HeaderComponent

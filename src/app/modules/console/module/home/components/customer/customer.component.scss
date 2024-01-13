@@ -1,31 +1,17 @@
-form{
-  padding: 30px;
-}
+.btn-outer{
+  //border: 1px solid red;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f6f6;
 
-.full-width{
-  width: 100%
-}
+  button{
+    margin: 5px;
+  }
 
-.img-g{
-  width: 180px!important;
-  height: 200px !important;
-  /*border: 1px solid red;*/
 
-  margin-left: 10px;
-}
-
-.img-g>img{
-  width: 150px;
-  height: 150px;
-  border: 1px solid black;
-  border-radius: 100%;
-
-}
-
-.img-g>input{
-  font-size: 10px!important;
-}
-
-.img-g>input::placeholder{
-  font-size: 10px!important;
 }
