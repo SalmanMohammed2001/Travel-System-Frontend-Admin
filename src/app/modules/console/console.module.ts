@@ -29,7 +29,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatIconModule
+
   ]
 })
 export class ConsoleModule { }

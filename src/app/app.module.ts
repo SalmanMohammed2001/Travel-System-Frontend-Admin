@@ -28,6 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatIconModule,
     BrowserAnimationsModule,
     NgbModule,
+    MatIconModule
 
 
   ],
