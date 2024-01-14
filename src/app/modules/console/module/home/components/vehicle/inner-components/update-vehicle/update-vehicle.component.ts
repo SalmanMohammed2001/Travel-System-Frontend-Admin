@@ -78,7 +78,7 @@ export class UpdateVehicleComponent {
 
 
   updateDta(){
-   // console.log(this.form)
+    let vehicleId=this.form.get('vehicleId')?.value;
     let vehicleName=this.form.get('vehicleName')?.value;
     let  vehicleCategory=this.form.get('vehicleCategory')?.value;
     let vehicleFuelType=this.form.get('vehicleFuelType')?.value;
@@ -112,7 +112,7 @@ export class UpdateVehicleComponent {
     if(!fontInterior){
       // @ts-ignore
       let img3=document.getElementById('fontInterior-img-show').src
-      rearView=this.dataURLtoFile(img3,'fontInterior-img-show_jpg')
+      fontInterior=this.dataURLtoFile(img3,'fontInterior-img-show_jpg')
 
     }
 
@@ -120,6 +120,7 @@ export class UpdateVehicleComponent {
 
 
     let setData = new FormData()
+    setData.append('vehicleId',vehicleId!)
     setData.append('vehicleName',vehicleName!)
     setData.append('vehiclePriceFor1Km',vehiclePriceFor1Km!)
     setData.append('vehicleCategory',vehicleCategory!)
@@ -138,10 +139,9 @@ export class UpdateVehicleComponent {
 
 
 
-   /* this.http.post('http://localhost:8081/api/v1/vehicle',setData).subscribe(res=>{
-      alert('save vehicle')
-    })
-*/
+   this.service.update(setData).subscribe(res=>{
+     alert('update')
+   })
 
   }
 
