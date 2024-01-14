@@ -91,16 +91,29 @@ export class UpdateCustomerComponent implements OnInit{
     let contact2=this.form.get('contact2')?.value;
     let email=this.form.get('email')?.value;
     let address=this.form.get('address')?.value;
-    let nicFrontImg=this.form.get('nicFrontImg')?.value;
-    let nicRearImg=this.form.get('nicRearImg')?.value;
+    let nicFrontImg:any=this.form.get('nicFrontImg')?.value;
+    let nicRearImg:any=this.form.get('nicRearImg')?.value;
     let profilePic:any=this.form.get('profilePic')?.value
 
 
       if(!profilePic){
      // @ts-ignore
-        let  img=  document.getElementById('profilePic-img-show').src
-        profilePic= this.dataURLtoFile(img,'profilePic-img_jpg')
+        let  img1=  document.getElementById('profilePic-img-show').src
+        profilePic= this.dataURLtoFile(img1,'profilePic-img_jpg')
       }
+      if(!nicFrontImg){
+        // @ts-ignore
+        let img2=document.getElementById('nicFront-img-show').src
+          nicFrontImg=this.dataURLtoFile(img2,'nicFront-img-jpg')
+
+      }
+
+    if(!nicRearImg){
+      // @ts-ignore
+      let img3=document.getElementById('nicRear-img-show').src
+      nicRearImg=this.dataURLtoFile(img3,'nicRear-img-jpg')
+
+    }
 
     let setData = new FormData()
     setData.append('username',username!)

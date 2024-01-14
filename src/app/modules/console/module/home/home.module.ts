@@ -14,6 +14,10 @@ import { AddCustomerComponent } from './components/customer/add-customer/add-cus
 import { AllCustomerComponent } from './components/customer/all-customer/all-customer.component';
 import { FindCustomerComponent } from './components/customer/find-customer/find-customer.component';
 import { UpdateCustomerComponent } from './components/customer/update-customer/update-customer.component';
+import { DeleteCustomerComponent } from './components/customer/delete-customer/delete-customer.component';
+import {MatIconModule} from "@angular/material/icon";
+import { VehicleComponent } from './components/vehicle/vehicle.component';
+import { SaveVehicleComponent } from './components/vehicle/inner-components/save-vehicle/save-vehicle.component';
 
 
 @NgModule({
@@ -25,7 +29,10 @@ import { UpdateCustomerComponent } from './components/customer/update-customer/u
     AddCustomerComponent,
     AllCustomerComponent,
     FindCustomerComponent,
-    UpdateCustomerComponent
+    UpdateCustomerComponent,
+    DeleteCustomerComponent,
+    VehicleComponent,
+    SaveVehicleComponent
   ],
   exports: [
     HeaderComponent
@@ -37,7 +44,8 @@ import { UpdateCustomerComponent } from './components/customer/update-customer/u
         MatButtonModule,
         ReactiveFormsModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+      MatIconModule
     ]
 })
 export class HomeModule { }
