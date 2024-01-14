@@ -9,3 +9,159 @@
   </div>
 </div>
 
+<hr>
+<div class="customer-outer">
+  <form action="" [formGroup]="form" (ngSubmit)="updateDta()" >
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Id</mat-label>
+            <input formControlName="vehicleId"   matInput placeholder="vehicleId" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>VehicleBrand</mat-label>
+            <input formControlName="vehicleName"   matInput placeholder="vehicleName" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>VehicleCategory</mat-label>
+            <select formControlName="vehicleCategory" matNativeControl required>
+              <option value="economy">Economy</option>
+              <option value="midRange">Mid-Range</option>
+              <option value="luxury">Luxury</option>
+              <option value="superLuxury">Super Luxury</option>
+            </select>
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>VehicleFuelType</mat-label>
+            <select formControlName="vehicleFuelType" matNativeControl required>
+              <option value="diesel">Diesel</option>
+              <option value="petrol">Petrol</option>
+            </select>
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>vehicleHybrid OR Non-Hybrid </mat-label>
+            <select formControlName="vehicleHybrid" matNativeControl required>
+              <option value="hybrid">Hybrid</option>
+              <option value="nonHybrid ">Non-Hybrid </option>
+            </select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>VehicleType</mat-label>
+            <select formControlName="vehicleType" matNativeControl required>
+              <option value="car">Car</option>
+              <option value="suv">Suv</option>
+              <option value="van">Van (7-12 seats)</option>
+              <option value="Bus">Bus (30-40 seats)</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>VehicleTransmission</mat-label>
+            <select formControlName="vehicleTransmission" matNativeControl required>
+              <option value="auto">auto</option>
+              <option value="manual">Manual</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>VehicleSeatCapacity</mat-label>
+            <input  formControlName="vehicleSeatCapacity"  matInput placeholder="vehicleSeatCapacity" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>vehicleFuelUsage</mat-label>
+            <input  formControlName="vehicleFuelUsage"  matInput placeholder="vehicleFuelUsage" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>VehiclePriceFor1Km</mat-label>
+            <input type="number" formControlName="vehiclePriceFor1Km"   matInput placeholder="vehiclePriceFor1Km" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>VehiclePriceFor100Km</mat-label>
+            <input formControlName="vehiclePriceFor100Km"  matInput placeholder="vehiclePriceFor100Km" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>VehicleQty</mat-label>
+            <input type="number" formControlName="vehicleQty"   matInput placeholder="vehicleQty" >
+          </mat-form-field>
+        </div>
+      </div>
+      <hr>
+      <div class="row" *ngFor="let temData of list">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let temData of list">
+          <h3>FrontView</h3>
+          <div class="img-g">
+            <img src="data:image/jpeg;base64,{{temData.vehicleImages[0]}}" alt="" id="frontView-img-show"> <br><br>
+            <input type="file" id="frontView"  class="form-control"
+                   placeholder="FrontView" (change)="FrontView($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>RearView</h3>
+          <div class="img-g">
+            <img src="data:image/jpeg;base64,{{temData.vehicleImages[1]}}" alt="" id="rearView-img-show"> <br><br>
+            <input type="file" id="rearView"  class="form-control"
+                   placeholder="RearView" (change)="RearView($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>FontInterior</h3>
+          <div class="img-g">
+            <img src="data:image/jpeg;base64,{{temData.vehicleImages[2]}}" alt="" id="fontInterior-img-show"> <br><br>
+            <input type="file" id="fontInterior"  class="form-control"
+                   placeholder="FontInterior" (change)="FontInterior($event)">
+          </div>
+        </div>
+        <!--<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>NicRear</h3>
+          <div class="img-g">
+            <img src="" alt="" id="rearInterior-img-show"> <br><br>
+            <input type="file" id="rearInterior" name="nicRear" class="form-control"
+                   placeholder="RearInterior" (change)="RearInterior($event)">
+          </div>
+        </div>-->
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-12 " style="display: flex;justify-content: flex-end">
+          <button mat-raised-button color="primary" >Update customer</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <br>
+  <br>
+</div>
+
+
+
+
+
+
