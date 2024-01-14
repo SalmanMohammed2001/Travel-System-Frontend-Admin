@@ -10,15 +10,16 @@ import {MatButtonModule} from "@angular/material/button";
 import { CustomerComponent } from './components/customer/customer.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { AddCustomerComponent } from './components/customer/add-customer/add-customer.component';
-import { AllCustomerComponent } from './components/customer/all-customer/all-customer.component';
-import { FindCustomerComponent } from './components/customer/find-customer/find-customer.component';
-import { UpdateCustomerComponent } from './components/customer/update-customer/update-customer.component';
-import { DeleteCustomerComponent } from './components/customer/delete-customer/delete-customer.component';
+import { AddCustomerComponent } from './components/customer/inner-components/add-customer/add-customer.component';
+import { AllCustomerComponent } from './components/customer/inner-components/all-customer/all-customer.component';
+import { FindCustomerComponent } from './components/customer/inner-components/find-customer/find-customer.component';
+import { UpdateCustomerComponent } from './components/customer/inner-components/update-customer/update-customer.component';
+import { DeleteCustomerComponent } from './components/customer/inner-components/delete-customer/delete-customer.component';
 import {MatIconModule} from "@angular/material/icon";
 import { VehicleComponent } from './components/vehicle/vehicle.component';
 import { SaveVehicleComponent } from './components/vehicle/inner-components/save-vehicle/save-vehicle.component';
 import { AllVehicleComponent } from './components/vehicle/inner-components/all-vehicle/all-vehicle.component';
+import { FindVehicleComponent } from './components/vehicle/inner-components/find-vehicle/find-vehicle.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AllVehicleComponent } from './components/vehicle/inner-components/all-v
     DeleteCustomerComponent,
     VehicleComponent,
     SaveVehicleComponent,
-    AllVehicleComponent
+    AllVehicleComponent,
+    FindVehicleComponent
   ],
   exports: [
     HeaderComponent

@@ -1,7 +1,7 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {CustomerService} from "../../../../../../../service/customer.service";
+import {CustomerService} from "../../../../../../../../service/customer.service";
 
 
 @Component({

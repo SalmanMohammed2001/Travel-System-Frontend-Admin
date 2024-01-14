@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {CustomerService} from "../../../../../../../service/customer.service";
+import {CustomerService} from "../../../../../../../../service/customer.service";
 
 @Component({
   selector: 'app-find-customer',
