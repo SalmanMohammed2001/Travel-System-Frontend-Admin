@@ -20,6 +20,7 @@ import { VehicleComponent } from './components/vehicle/vehicle.component';
 import { SaveVehicleComponent } from './components/vehicle/inner-components/save-vehicle/save-vehicle.component';
 import { AllVehicleComponent } from './components/vehicle/inner-components/all-vehicle/all-vehicle.component';
 import { FindVehicleComponent } from './components/vehicle/inner-components/find-vehicle/find-vehicle.component';
+import { UpdateVehicleComponent } from './components/vehicle/inner-components/update-vehicle/update-vehicle.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FindVehicleComponent } from './components/vehicle/inner-components/find
     VehicleComponent,
     SaveVehicleComponent,
     AllVehicleComponent,
-    FindVehicleComponent
+    FindVehicleComponent,
+    UpdateVehicleComponent
   ],
   exports: [
     HeaderComponent
