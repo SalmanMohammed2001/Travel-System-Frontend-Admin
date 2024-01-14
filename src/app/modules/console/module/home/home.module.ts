@@ -18,6 +18,7 @@ import { DeleteCustomerComponent } from './components/customer/delete-customer/d
 import {MatIconModule} from "@angular/material/icon";
 import { VehicleComponent } from './components/vehicle/vehicle.component';
 import { SaveVehicleComponent } from './components/vehicle/inner-components/save-vehicle/save-vehicle.component';
+import { AllVehicleComponent } from './components/vehicle/inner-components/all-vehicle/all-vehicle.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SaveVehicleComponent } from './components/vehicle/inner-components/save
     UpdateCustomerComponent,
     DeleteCustomerComponent,
     VehicleComponent,
-    SaveVehicleComponent
+    SaveVehicleComponent,
+    AllVehicleComponent
   ],
   exports: [
     HeaderComponent

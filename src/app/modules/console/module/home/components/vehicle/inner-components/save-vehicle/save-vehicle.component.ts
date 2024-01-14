@@ -94,7 +94,7 @@ export class SaveVehicleComponent implements OnInit{
     this.http.post('http://localhost:8081/api/v1/vehicle',setData).subscribe(res=>{
       alert('save vehicle')
     })
-    console.log('salmna')
+   
 
   }
 

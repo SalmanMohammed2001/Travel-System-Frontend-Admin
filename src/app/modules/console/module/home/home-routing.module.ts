@@ -9,6 +9,7 @@ import {UpdateCustomerComponent} from "./components/customer/update-customer/upd
 import {DeleteCustomerComponent} from "./components/customer/delete-customer/delete-customer.component";
 import {VehicleComponent} from "./components/vehicle/vehicle.component";
 import {SaveVehicleComponent} from "./components/vehicle/inner-components/save-vehicle/save-vehicle.component";
+import {AllVehicleComponent} from "./components/vehicle/inner-components/all-vehicle/all-vehicle.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent,children:[
@@ -21,7 +22,8 @@ const routes: Routes = [
           {path:'delete',component:DeleteCustomerComponent}]},
       {path:'vehicle',component:VehicleComponent,children:[
           {path: '',redirectTo: "new" , pathMatch:"full" },
-          {path: 'new',component:SaveVehicleComponent }
+          {path: 'new',component:SaveVehicleComponent },
+          {path: 'all',component:AllVehicleComponent }
         ]}
     ] },
 
