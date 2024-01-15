@@ -1,1 +1,16 @@
-<p>driver works!</p>
+<div class="driver-outer">
+
+  <div class="btn-outer">
+    <button mat-raised-button routerLink="/console/driver/all">All</button> |
+    <button mat-raised-button color="accent" routerLink="/console/driver/find">Find</button> |
+    <button mat-raised-button color="primary" routerLink="/console/driver/new">New</button> |
+    <button mat-raised-button color="warn" routerLink="/console/driver/delete">Delete</button> |
+    <button mat-raised-button color="primary" routerLink="/console/driver/update">Update</button>
+  </div>
+
+  <div class="router-inner">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+

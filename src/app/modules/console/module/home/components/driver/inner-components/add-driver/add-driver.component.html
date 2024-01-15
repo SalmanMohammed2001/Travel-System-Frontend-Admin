@@ -1,1 +1,78 @@
-<p>add-driver works!</p>
+<div class="customer-outer">
+  <form action="" [formGroup]="form" (ngSubmit)="createData()" >
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>DriverName</mat-label>
+            <input formControlName="driverName"   matInput placeholder="driverName" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>DriverContact</mat-label>
+            <input  formControlName="driverContact"  matInput placeholder="driverContact" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>DriverNic</mat-label>
+            <input  formControlName="driverNic"  matInput placeholder="driverNic" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>vehicleId</mat-label>
+            <input  formControlName="vehicleId"   matInput placeholder="vehicleId" >
+          </mat-form-field>
+        </div>
+
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>DriverImage</h3>
+          <div class="img-g">
+            <img src="" alt="" id="driverImage-img-show"> <br><br>
+            <input type="file" id="driverImage"  class="form-control"
+                   placeholder="FrontView" (change)="driverImage($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>LicenseImageFront</h3>
+          <div class="img-g">
+            <img src="" alt="" id="licenseImageFront-img-show"> <br><br>
+            <input type="file" id="licenseImageFront"  class="form-control"
+                   placeholder="RearView" (change)="licenseImageFront($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>LicenseImageRear</h3>
+          <div class="img-g">
+            <img src="" alt="" id="licenseImageRear-img-show"> <br><br>
+            <input type="file" id="licenseImageRear"  class="form-control"
+                   placeholder="FontInterior" (change)="licenseImageRear($event)">
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-12 " style="display: flex;justify-content: flex-end">
+          <button mat-raised-button color="primary" >Save customer</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <br>
+  <br>
+</div>
+
+
+
+
+
+
