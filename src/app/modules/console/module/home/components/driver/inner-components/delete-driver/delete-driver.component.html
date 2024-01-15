@@ -1,1 +1,31 @@
-<p>delete-driver works!</p>
+<div class="container " style="padding: 20px">
+  <div class="row">
+    <table class="table table hover col-12 col-sm-6 col-md-4 col-lg-3">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>driverContact</th>
+        <th>driverNic</th>
+        <th>Delete</th>
+
+
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tempData of list">
+        <td>{{tempData.driverId}}</td>
+        <td>{{tempData.driverName}}</td>
+        <td>{{tempData.driverContact}}</td>
+        <td>{{tempData.driverNic}}</td>
+        <td>
+          <button mat-raised-button color="warn" (click)="delete(tempData.driverId)"> <mat-icon>delete</mat-icon> Delete </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
