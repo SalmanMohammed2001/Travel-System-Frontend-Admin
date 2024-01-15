@@ -18,37 +18,37 @@ export class DeleteCustomerComponent implements OnInit{
 
   list:Array<any>=[]
   findAll(){
-   this.service.findAll().subscribe(res=>{
-     this.list=res.data
-     console.log(this.list)
-   })
+    this.service.findAll().subscribe(res=>{
+      this.list=res.data
+      console.log(this.list)
+    })
   }
 
 
 
-findData(event:any){
-   /* this.service.findEmail(event.target.value).subscribe(res=>{
-      this.list=res
-      console.log(this.list)
-    })*/
+  findData(event:any){
+    /* this.service.findEmail(event.target.value).subscribe(res=>{
+       this.list=res
+       console.log(this.list)
+     })*/
 
-  let tbl_body_element=document.getElementById('tblBody');
+    let tbl_body_element=document.getElementById('tblBody');
 
- // @ts-ignore
-  tbl_body_element.innerHTML="";
+    // @ts-ignore
+    tbl_body_element.innerHTML="";
 
-  let record_element=document.createElement('tr')
-  // @ts-ignore
-  /*let text=document.getElementById('searchText')as HTMLInputElement
-  let valueData=text.value
-  valueData=''*/
-  let valueData=event.target.value
+    let record_element=document.createElement('tr')
+    // @ts-ignore
+    /*let text=document.getElementById('searchText')as HTMLInputElement
+    let valueData=text.value
+    valueData=''*/
+    let valueData=event.target.value
 
 
-   for (const data of this.list) {
-     if(data.email.includes(valueData) || data.nic.includes(valueData)){
+    for (const data of this.list) {
+      if(data.email.includes(valueData) || data.nic.includes(valueData)){
 
-       let record_data=`<td>${data.userId}</td>
+        let record_data=`<td>${data.userId}</td>
                               <td>${data.username}</td>
                               <td>${data.nic}</td>
                               <td>${data.gender}</td>
@@ -59,13 +59,13 @@ findData(event:any){
 <!--                              <button class="btn btn-danger btn-sm"  (click)="${delete(data.email)}"> Delete</button>-->
 </td>`
 
-       record_element.innerHTML=record_data
-       // @ts-ignore
-       tbl_body_element.appendChild(record_element)
+        record_element.innerHTML=record_data
+        // @ts-ignore
+        tbl_body_element.appendChild(record_element)
 
-     }
+      }
 
-   }
+    }
 
   }
 

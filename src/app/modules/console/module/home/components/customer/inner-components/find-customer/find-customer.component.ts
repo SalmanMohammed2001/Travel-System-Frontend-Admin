@@ -21,14 +21,14 @@ export class FindCustomerComponent {
 
   list:Array<any>=[]
   findData(){
-  this.service.findEmail(this.searchId).subscribe(res=>{
- /*   this.list.push(res.data.userId)
-    this.list.push(res.data.username)*/
+    this.service.findEmail(this.searchId).subscribe(res=>{
+      /*   this.list.push(res.data.userId)
+         this.list.push(res.data.username)*/
 
-    this.  list=res
+      this.  list=res
 
-    console.log(this.list)
+      console.log(this.list)
 
-  })
+    })
   }
 }

@@ -23,7 +23,7 @@ export class UpdateCustomerComponent implements OnInit{
 
   findData(event:any){
     this.service.findEmail(event.target.value).subscribe(res=>{
-    this.form.patchValue({
+      this.form.patchValue({
         userId:res[0].userId,
         username:res[0].username,
         password:res[0].password,
@@ -96,17 +96,17 @@ export class UpdateCustomerComponent implements OnInit{
     let profilePic:any=this.form.get('profilePic')?.value
 
 
-      if(!profilePic){
-     // @ts-ignore
-        let  img1=  document.getElementById('profilePic-img-show').src
-        profilePic= this.dataURLtoFile(img1,'profilePic-img_jpg')
-      }
-      if(!nicFrontImg){
-        // @ts-ignore
-        let img2=document.getElementById('nicFront-img-show').src
-          nicFrontImg=this.dataURLtoFile(img2,'nicFront-img-jpg')
+    if(!profilePic){
+      // @ts-ignore
+      let  img1=  document.getElementById('profilePic-img-show').src
+      profilePic= this.dataURLtoFile(img1,'profilePic-img_jpg')
+    }
+    if(!nicFrontImg){
+      // @ts-ignore
+      let img2=document.getElementById('nicFront-img-show').src
+      nicFrontImg=this.dataURLtoFile(img2,'nicFront-img-jpg')
 
-      }
+    }
 
     if(!nicRearImg){
       // @ts-ignore
@@ -129,7 +129,7 @@ export class UpdateCustomerComponent implements OnInit{
     setData.append('nicRearImg',nicRearImg!)
     setData.append('profilePic',profilePic!)
 
-   this.service.update(setData).subscribe(res=>{
+    this.service.update(setData).subscribe(res=>{
       alert('update')
     })
 

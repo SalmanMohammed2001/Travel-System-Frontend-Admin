@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+
   hide(){
-  const box=  document.getElementById('box')
+    const box=  document.getElementById('box')
     const show_button=  document.getElementById('show_button')
     if(box != null && show_button !=null){
       box.style.right='-300px'
@@ -27,6 +28,4 @@ export class HeaderComponent {
       box.style.transition=' all 400ms ease-in'
     }
   }
-
-
 }

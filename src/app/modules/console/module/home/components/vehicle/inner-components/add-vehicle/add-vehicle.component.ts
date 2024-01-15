@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-save-vehicle',
-  templateUrl: './save-vehicle.component.html',
-  styleUrls: ['./save-vehicle.component.scss']
+  selector: 'app-add-vehicle',
+  templateUrl: './add-vehicle.component.html',
+  styleUrls: ['./add-vehicle.component.scss']
 })
-export class SaveVehicleComponent implements OnInit{
+export class AddVehicleComponent implements OnInit{
   ngOnInit(): void {
   }
 
@@ -16,7 +16,7 @@ export class SaveVehicleComponent implements OnInit{
 
 
   FrontView(event:any){
-   let  file=event.target.files[0]
+    let  file=event.target.files[0]
     this.form.patchValue({frontView:file})
   }
   RearView(event:any){
@@ -27,10 +27,10 @@ export class SaveVehicleComponent implements OnInit{
     const file=event.target.files[0]
     this.form.patchValue({fontInterior:file})
   }
- /* RearInterior(event:any){
-    const file=event.target.files[0]
-    this.form.patchValue({rearInterior:file})
-  }*/
+  /* RearInterior(event:any){
+     const file=event.target.files[0]
+     this.form.patchValue({rearInterior:file})
+   }*/
 
   form=new FormGroup({
     vehicleName:new FormControl('',[Validators.required]),
@@ -94,7 +94,7 @@ export class SaveVehicleComponent implements OnInit{
     this.http.post('http://localhost:8081/api/v1/vehicle',setData).subscribe(res=>{
       alert('save vehicle')
     })
-   
+
 
   }
 

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomerService} from "../../../../../../../../service/customer.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-add-customer',

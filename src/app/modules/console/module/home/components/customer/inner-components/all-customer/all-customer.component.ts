@@ -1,8 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {CustomerService} from "../../../../../../../../service/customer.service";
-
 
 @Component({
   selector: 'app-all-customer',
@@ -29,14 +27,14 @@ export class AllCustomerComponent implements OnInit{
     })
   }
 
-/*  nicFront=''
-  nicBack=''
-  profile=''*/
+  /*  nicFront=''
+    nicBack=''
+    profile=''*/
 
   list2:Array<any>=[]
   findData(email:any){
     this.service.findEmail(email).subscribe(res=>{
-       this.list2=res
+      this.list2=res
       console.log(this.list2)
 
     })

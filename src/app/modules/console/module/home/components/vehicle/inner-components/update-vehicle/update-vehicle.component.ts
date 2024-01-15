@@ -32,7 +32,7 @@ export class UpdateVehicleComponent {
         vehiclePriceFor1Km:res[0].vehiclePriceFor1Km,
         vehiclePriceFor100Km:res[0].vehiclePriceFor100Km,
         vehicleQty:res[0].vehicleQty,
-       // vId:res[0].vehicleName
+        // vId:res[0].vehicleName
       })
       this.list=res
     })
@@ -139,9 +139,9 @@ export class UpdateVehicleComponent {
 
 
 
-   this.service.update(setData).subscribe(res=>{
-     alert('update')
-   })
+    this.service.update(setData).subscribe(res=>{
+      alert('update')
+    })
 
   }
 

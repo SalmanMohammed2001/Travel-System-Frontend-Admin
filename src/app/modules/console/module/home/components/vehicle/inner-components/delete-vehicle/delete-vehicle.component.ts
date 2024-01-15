@@ -6,7 +6,7 @@ import {VehicleService} from "../../../../../../../../service/vehicle.service";
   templateUrl: './delete-vehicle.component.html',
   styleUrls: ['./delete-vehicle.component.scss']
 })
-export class DeleteVehicleComponent implements OnInit{
+export class DeleteVehicleComponent  implements OnInit{
 
   constructor(private service:VehicleService) {
   }
