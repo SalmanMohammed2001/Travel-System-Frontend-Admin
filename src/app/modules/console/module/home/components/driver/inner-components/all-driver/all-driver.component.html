@@ -69,7 +69,7 @@
       </div>
       <div class="modal-body">
 
-        <div class="container " style="padding: 20px">
+        <div class="container " style="padding: 20px" *ngFor="let tempData of list2">
           <div class="row">
             <table class="table table hover col-12 col-sm-6 col-md-4 col-lg-3">
               <thead>
@@ -90,7 +90,7 @@
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let tempData of list2">
+              <tr >
                 <td>{{tempData.vehicle.vehicleId}}</td>
                 <td>{{tempData.vehicle.vehicleName}}</td>
                 <td>{{tempData.vehicle.vehicleCategory}}</td>
@@ -110,6 +110,15 @@
               </tr>
               </tbody>
             </table>
+          </div>
+          <div class="dow">
+            <h2 style="text-align: center">Vehicle Images</h2>
+            <div style="width: 100%;height: 300px;display: flex;align-items: center;justify-content:space-between;padding: 30px">
+              <img src="data:image/jpeg;base64,{{tempData.vehicle.vehicleImages[0]}}" alt="" style="width: 400px;padding: 10px" >
+              <img src="data:image/jpeg;base64,{{tempData.vehicle.vehicleImages[1]}}" alt="" style="width: 400px;padding: 10px">
+              <img src="data:image/jpeg;base64,{{tempData.vehicle.vehicleImages[2]}}" alt="" style="width: 400px;padding: 10px">
+
+            </div>
           </div>
         </div>
 
