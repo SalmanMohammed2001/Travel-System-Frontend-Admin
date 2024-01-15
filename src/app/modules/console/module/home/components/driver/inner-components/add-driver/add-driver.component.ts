@@ -1,16 +1,38 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {DriverService} from "../../../../../../../../service/driver.service";
+import {VehicleService} from "../../../../../../../../service/vehicle.service";
 
 @Component({
   selector: 'app-add-driver',
   templateUrl: './add-driver.component.html',
   styleUrls: ['./add-driver.component.scss']
 })
-export class AddDriverComponent {
+export class AddDriverComponent implements OnInit{
 
-  constructor(private  service:DriverService) {
+  constructor(private  service:DriverService,private  vehicleService:VehicleService) {
+
   }
+
+
+  list:Array<any>=[]
+
+
+  ngOnInit(): void {
+this.findAllDataVehicleStatesFalse()
+  }
+
+  findAllDataVehicleStatesFalse(){
+    this.vehicleService.findAllDataVehicleStatesFalse().subscribe(res=>{
+      if(res.data===null){
+        alert('empty vehicle')
+      }else {
+
+        this.list=res.data
+      }
+    })
+  }
+
 
   driverImage(event:any){
     let  file=event.target.files[0]
@@ -71,6 +93,8 @@ export class AddDriverComponent {
       alert('save data')
     })
   }
+
+
 
 
 

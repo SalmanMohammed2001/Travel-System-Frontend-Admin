@@ -31,6 +31,7 @@ import { UpdateDriverComponent } from './components/driver/inner-components/upda
 import { FindDriverComponent } from './components/driver/inner-components/find-driver/find-driver.component';
 import { AllDriverComponent } from './components/driver/inner-components/all-driver/all-driver.component';
 import { DeleteDriverComponent } from './components/driver/inner-components/delete-driver/delete-driver.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 
@@ -70,7 +71,8 @@ import { DeleteDriverComponent } from './components/driver/inner-components/dele
         ReactiveFormsModule,
         HttpClientModule,
         FormsModule,
-      MatIconModule
+        MatIconModule,
+        MatSelectModule
     ]
 })
 export class HomeModule { }

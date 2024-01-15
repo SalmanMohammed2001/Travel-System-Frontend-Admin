@@ -1,5 +1,5 @@
 <div class="customer-outer">
-  <form action="" [formGroup]="form" (ngSubmit)="createData()" >
+  <form action="" [formGroup]="form" (ngSubmit)="createData()"  >
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -23,10 +23,16 @@
           </mat-form-field>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <mat-form-field  class="full-width"   appearance="outline">
-            <mat-label>vehicleId</mat-label>
-            <input  formControlName="vehicleId"   matInput placeholder="vehicleId" >
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" >
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>VehicleId</mat-label>
+            <select formControlName="vehicleId" matNativeControl required  >
+              <option *ngFor="let data of list" value="{{data.vehicleId}}">{{data.vehicleId}}</option>
+
+<!--              <option value="{{temData.vehicleId}}">{{temData.vehicleId}}</option>-->
+             <!-- <option value="auto">auto</option>
+              <option value="manual">Manual</option>-->
+            </select>
           </mat-form-field>
         </div>
 
