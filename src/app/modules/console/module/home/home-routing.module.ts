@@ -12,6 +12,7 @@ import {SaveVehicleComponent} from "./components/vehicle/inner-components/save-v
 import {AllVehicleComponent} from "./components/vehicle/inner-components/all-vehicle/all-vehicle.component";
 import {FindVehicleComponent} from "./components/vehicle/inner-components/find-vehicle/find-vehicle.component";
 import {UpdateVehicleComponent} from "./components/vehicle/inner-components/update-vehicle/update-vehicle.component";
+import {DeleteVehicleComponent} from "./components/vehicle/inner-components/delete-vehicle/delete-vehicle.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent,children:[
@@ -28,6 +29,7 @@ const routes: Routes = [
           {path: 'all',component:AllVehicleComponent },
           {path: 'find',component:FindVehicleComponent },
           {path: 'update',component:UpdateVehicleComponent },
+          {path: 'delete',component:DeleteVehicleComponent },
         ]}
     ] },
 
