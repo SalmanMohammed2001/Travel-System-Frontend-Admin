@@ -38,6 +38,7 @@ import { FindGuideComponent } from './components/guide/inner-components/find-gui
 import { AllGuideComponent } from './components/guide/inner-components/all-guide/all-guide.component';
 import { DeleteGuideComponent } from './components/guide/inner-components/delete-guide/delete-guide.component';
 import { UpdateGuideComponent } from './components/guide/inner-components/update-guide/update-guide.component';
+import { HotelComponent } from './components/hotel/hotel.component';
 
 
 
@@ -70,6 +71,7 @@ import { UpdateGuideComponent } from './components/guide/inner-components/update
     AllGuideComponent,
     DeleteGuideComponent,
     UpdateGuideComponent,
+    HotelComponent,
 
   ],
   exports: [
