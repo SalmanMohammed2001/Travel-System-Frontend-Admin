@@ -23,6 +23,12 @@ import {AllDriverComponent} from "./components/driver/inner-components/all-drive
 import {FindDriverComponent} from "./components/driver/inner-components/find-driver/find-driver.component";
 import {UpdateDriverComponent} from "./components/driver/inner-components/update-driver/update-driver.component";
 import {DeleteDriverComponent} from "./components/driver/inner-components/delete-driver/delete-driver.component";
+import {GuideComponent} from "./components/guide/guide.component";
+import {AddGuideComponent} from "./components/guide/inner-components/add-guide/add-guide.component";
+import {AllGuideComponent} from "./components/guide/inner-components/all-guide/all-guide.component";
+import {FindGuideComponent} from "./components/guide/inner-components/find-guide/find-guide.component";
+import {UpdateGuideComponent} from "./components/guide/inner-components/update-guide/update-guide.component";
+import {DeleteGuideComponent} from "./components/guide/inner-components/delete-guide/delete-guide.component";
 
 
 
@@ -52,7 +58,14 @@ const routes: Routes = [
           {path: 'find',component:FindDriverComponent },
           {path: 'update',component:UpdateDriverComponent },
           {path: 'delete',component:DeleteDriverComponent },
-
+        ]},
+      {path:'guide',component:GuideComponent,children:[
+          {path: '',redirectTo: "all" , pathMatch:"full" },
+          {path: 'new',component:AddGuideComponent },
+          {path: 'all',component:AllGuideComponent },
+          {path: 'find',component:FindGuideComponent },
+          {path: 'update',component:UpdateGuideComponent },
+          {path: 'delete',component:DeleteGuideComponent },
         ]}
     ]},
 ];

@@ -32,6 +32,12 @@ import { FindDriverComponent } from './components/driver/inner-components/find-d
 import { AllDriverComponent } from './components/driver/inner-components/all-driver/all-driver.component';
 import { DeleteDriverComponent } from './components/driver/inner-components/delete-driver/delete-driver.component';
 import {MatSelectModule} from "@angular/material/select";
+import { GuideComponent } from './components/guide/guide.component';
+import { AddGuideComponent } from './components/guide/inner-components/add-guide/add-guide.component';
+import { FindGuideComponent } from './components/guide/inner-components/find-guide/find-guide.component';
+import { AllGuideComponent } from './components/guide/inner-components/all-guide/all-guide.component';
+import { DeleteGuideComponent } from './components/guide/inner-components/delete-guide/delete-guide.component';
+import { UpdateGuideComponent } from './components/guide/inner-components/update-guide/update-guide.component';
 
 
 
@@ -58,6 +64,12 @@ import {MatSelectModule} from "@angular/material/select";
     FindDriverComponent,
     AllDriverComponent,
     DeleteDriverComponent,
+    GuideComponent,
+    AddGuideComponent,
+    FindGuideComponent,
+    AllGuideComponent,
+    DeleteGuideComponent,
+    UpdateGuideComponent,
 
   ],
   exports: [
