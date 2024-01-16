@@ -1,1 +1,139 @@
-<p>update-guide works!</p>
+<div class="container" style="padding: 20px">
+  <div class="row">
+    <div class="col-12">
+      <mat-form-field class="col-12"  appearance="outline">
+        <mat-label>Vehicle Id</mat-label>
+        <input matInput placeholder="post id"  (keyup.enter)="findGuide($event)" >
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+
+
+
+
+
+
+
+<div class="customer-outer">
+  <form action="" [formGroup]="form" (ngSubmit)="createData()"  >
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>GuideId</mat-label>
+            <input formControlName="guideId"   matInput placeholder="guideId" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>GuideName</mat-label>
+            <input formControlName="guideName"   matInput placeholder="guideName" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>GuideAddress</mat-label>
+            <input  formControlName="guideAddress"  matInput placeholder="guideAddress" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>GuideContact</mat-label>
+            <input  formControlName="guideContact"  matInput placeholder="guideContact" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>GuideBirthDate</mat-label>
+            <input  formControlName="guideBirthDate"  matInput placeholder="guideBirthDate" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>GuideManDayValue</mat-label>
+            <input type="number"  formControlName="guideManDayValue"  matInput placeholder="guideManDayValue" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>GuideExperience</mat-label>
+            <input  formControlName="guideExperience"  matInput placeholder="guideExperience" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>GuideStatus</mat-label>
+            <input  formControlName="guideStatus"  matInput placeholder="guideStatus" >
+          </mat-form-field>
+        </div>
+
+
+      </div>
+      <hr>
+      <div class="row" *ngFor="let data of list1">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>GuideIdFrontImage</h3>
+          <div class="img-g">
+            <img src="data:image/jpeg;base64,{{data.guideIdFrontImage}}" alt="" id="guideIdFrontImage-img-show"> <br><br>
+            <input type="file" id="guideIdFrontImage"  class="form-control"
+                   placeholder="FrontView" (change)="guideIdFrontImage($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>GuideIdRearImage</h3>
+          <div class="img-g">
+            <img src="data:image/jpeg;base64,{{data.guideIdRearImage}}" alt="" id="guideIdRearImage-img-show"> <br><br>
+            <input type="file" id="guideIdRearImage"  class="form-control"
+                   placeholder="RearView" (change)="guideIdRearImage($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>GuideNicFrontImag</h3>
+          <div class="img-g">
+            <img src="data:image/jpeg;base64,{{data.guideNicFrontImag}}" alt="" id="guideNicFrontImag-img-show"> <br><br>
+            <input type="file" id="guideNicFrontImag"  class="form-control"
+                   placeholder="FontInterior" (change)="guideNicFrontImag($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>GuideNicRearImage</h3>
+          <div class="img-g">
+            <img src="data:image/jpeg;base64,{{data.guideNicRearImage}}" alt="" id="guideNicRearImage-img-show"> <br><br>
+            <input type="file" id="guideNicRearImage"  class="form-control"
+                   placeholder="FontInterior" (change)="guideNicRearImage($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>GuideProfilePicImage</h3>
+          <div class="img-g">
+            <img src="data:image/jpeg;base64,{{data.guideProfilePicImage}}" alt="" id="guideProfilePicImage-img-show"> <br><br>
+            <input type="file" id="guideProfilePicImage"  class="form-control"
+                   placeholder="FontInterior" (change)="guideProfilePicImage($event)">
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-12 " style="display: flex;justify-content: flex-end">
+          <button mat-raised-button color="primary" >Update Guide</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <br>
+  <br>
+</div>
+
+
+
+
+
+
