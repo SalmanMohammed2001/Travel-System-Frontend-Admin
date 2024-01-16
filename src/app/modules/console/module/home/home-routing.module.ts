@@ -29,6 +29,12 @@ import {AllGuideComponent} from "./components/guide/inner-components/all-guide/a
 import {FindGuideComponent} from "./components/guide/inner-components/find-guide/find-guide.component";
 import {UpdateGuideComponent} from "./components/guide/inner-components/update-guide/update-guide.component";
 import {DeleteGuideComponent} from "./components/guide/inner-components/delete-guide/delete-guide.component";
+import {HotelComponent} from "./components/hotel/hotel.component";
+import {AddHotelComponent} from "./components/hotel/inner-components/add-hotel/add-hotel.component";
+import {AllHotelComponent} from "./components/hotel/inner-components/all-hotel/all-hotel.component";
+import {FindHotelComponent} from "./components/hotel/inner-components/find-hotel/find-hotel.component";
+import {UpdateHotelComponent} from "./components/hotel/inner-components/update-hotel/update-hotel.component";
+import {DeleteHotelComponent} from "./components/hotel/inner-components/delete-hotel/delete-hotel.component";
 
 
 
@@ -66,7 +72,15 @@ const routes: Routes = [
           {path: 'find',component:FindGuideComponent },
           {path: 'update',component:UpdateGuideComponent },
           {path: 'delete',component:DeleteGuideComponent },
-        ]}
+        ]},
+      {path:'hotel',component:HotelComponent,children:[
+          {path: '',redirectTo: "all" , pathMatch:"full" },
+          {path: 'new',component:AddHotelComponent },
+          {path: 'all',component:AllHotelComponent },
+          {path: 'find',component:FindHotelComponent },
+          {path: 'update',component:UpdateHotelComponent },
+          {path: 'delete',component:DeleteHotelComponent },
+        ]},
     ]},
 ];
 

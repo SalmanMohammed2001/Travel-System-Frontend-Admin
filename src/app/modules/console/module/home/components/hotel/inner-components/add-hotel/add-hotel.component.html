@@ -1,1 +1,196 @@
-<p>add-hotel works!</p>
+<div class="customer-outer">
+  <form action="" [formGroup]="form"  (ngSubmit)="createData()" >
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>HotelName</mat-label>
+            <input formControlName="hotelName"   matInput placeholder="hotelName" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>HotelCategory</mat-label>
+            <select formControlName="hotelCategory" matNativeControl required>
+              <option value="3_Star_and_2_Star"> 3-Star and 2-Star</option>
+              <option value="3_Star_and_4_Star">3-Star and 2-Star</option>
+              <option value="4_Star_and_5_Star">4-Star and 5-Star</option>
+              <option value="5_Star">5 Star</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>HotelAddress</mat-label>
+            <input  formControlName="hotelAddress"  matInput placeholder="hotelAddress" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>HotelMapLink</mat-label>
+            <input  formControlName="hotelMapLink"  matInput placeholder="hotelMapLink" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>HotelEmail</mat-label>
+            <input  formControlName="hotelEmail"   matInput placeholder="hotelEmail" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>contact1</mat-label>
+            <input formControlName="contact1"  matInput placeholder="contact1" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>contact2</mat-label>
+            <input  formControlName="contact2"   matInput placeholder="contact2" >
+          </mat-form-field>
+        </div>
+
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <mat-form-field  class="full-width"   appearance="outline">
+          <mat-label>HotelPetAllowed</mat-label>
+          <input  formControlName="hotelPetAllowed"   matInput placeholder="hotelPetAllowed" >
+        </mat-form-field>
+      </div>
+
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Option1</mat-label>
+            <select formControlName="option1" matNativeControl required>
+              <option value="full_Board_with_A/C_Luxury_Room_Double">Full_Board_with_A/C_Luxury_Room_Double</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Option 1 Price( Full Board with A/C Luxury Room – Double)</mat-label>
+            <input  type="number" formControlName="price1" matInput   >
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Option2</mat-label>
+            <select formControlName="option2" matNativeControl required>
+              <option value="half_Board_with_A/C_Luxury_Room_Double">Half_Board_with_A/C_Luxury_Room_Double</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Option 2 Price( Half Board with A/C Luxury Room – Double)</mat-label>
+            <input type="number"  formControlName="price2"  matInput >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Option3</mat-label>
+            <select formControlName="option3" matNativeControl required>
+              <option value="full_Board_with_A/C_Luxury_Room_Triple">Full_Board_with_A/C_Luxury_Room_Triple</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Option 3 Price( Full Board with A/C Luxury Room – Triple )</mat-label>
+            <input type="number"  formControlName="price3"  matInput >
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Option4</mat-label>
+            <select formControlName="option4" matNativeControl required>
+              <option value="half_Board_with_A/C_Luxury_Room_Triple">Half_Board_with_A/C_Luxury_Room_Triple</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Option 4 Price( Half Board with A/C Luxury Room – Triple )</mat-label>
+            <input type="number"  formControlName="price4" matInput>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+
+
+
+
+<hr>
+   <!--   <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>FrontView</h3>
+          <div class="img-g">
+            <img src="" alt="" id="frontView-img-show"> <br><br>
+            <input type="file" id="frontView"  class="form-control"
+                   placeholder="FrontView" (change)="FrontView($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>RearView</h3>
+          <div class="img-g">
+            <img src="" alt="" id="rearView-img-show"> <br><br>
+            <input type="file" id="rearView"  class="form-control"
+                   placeholder="RearView" (change)="RearView($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>FontInterior</h3>
+          <div class="img-g">
+            <img src="" alt="" id="fontInterior-img-show"> <br><br>
+            <input type="file" id="fontInterior"  class="form-control"
+                   placeholder="FontInterior" (change)="FontInterior($event)">
+          </div>
+        </div>
+        &lt;!&ndash;<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>NicRear</h3>
+          <div class="img-g">
+            <img src="" alt="" id="rearInterior-img-show"> <br><br>
+            <input type="file" id="rearInterior" name="nicRear" class="form-control"
+                   placeholder="RearInterior" (change)="RearInterior($event)">
+          </div>
+        </div>&ndash;&gt;
+      </div>-->
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-12 " style="display: flex;justify-content: flex-end">
+          <button mat-raised-button color="primary" >Save customer</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <br>
+  <br>
+</div>
+
+
+
+
+
