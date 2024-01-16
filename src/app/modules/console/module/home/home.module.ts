@@ -39,6 +39,11 @@ import { AllGuideComponent } from './components/guide/inner-components/all-guide
 import { DeleteGuideComponent } from './components/guide/inner-components/delete-guide/delete-guide.component';
 import { UpdateGuideComponent } from './components/guide/inner-components/update-guide/update-guide.component';
 import { HotelComponent } from './components/hotel/hotel.component';
+import { AddHotelComponent } from './components/hotel/inner-components/add-hotel/add-hotel.component';
+import { UpdateHotelComponent } from './components/hotel/inner-components/update-hotel/update-hotel.component';
+import { FindHotelComponent } from './components/hotel/inner-components/find-hotel/find-hotel.component';
+import { AllHotelComponent } from './components/hotel/inner-components/all-hotel/all-hotel.component';
+import { DeleteHotelComponent } from './components/hotel/inner-components/delete-hotel/delete-hotel.component';
 
 
 
@@ -72,6 +77,11 @@ import { HotelComponent } from './components/hotel/hotel.component';
     DeleteGuideComponent,
     UpdateGuideComponent,
     HotelComponent,
+    AddHotelComponent,
+    UpdateHotelComponent,
+    FindHotelComponent,
+    AllHotelComponent,
+    DeleteHotelComponent,
 
   ],
   exports: [
