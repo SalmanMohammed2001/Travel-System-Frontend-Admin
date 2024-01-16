@@ -53,7 +53,6 @@ export class AddVehicleComponent implements OnInit{
 
 
   createData(){
-    console.log(this.form)
     let vehicleName=this.form.get('vehicleName')?.value;
     let  vehicleCategory=this.form.get('vehicleCategory')?.value;
     let vehicleFuelType=this.form.get('vehicleFuelType')?.value;

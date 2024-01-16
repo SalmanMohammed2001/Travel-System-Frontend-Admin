@@ -143,45 +143,58 @@
 
 
 <hr>
-   <!--   <div class="row">
+      <div class="row">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <h3>FrontView</h3>
+          <h3>Hotel Image 1</h3>
           <div class="img-g">
-            <img src="" alt="" id="frontView-img-show"> <br><br>
-            <input type="file" id="frontView"  class="form-control"
-                   placeholder="FrontView" (change)="FrontView($event)">
+            <img src="" alt="" id="hotelImage1-img-show"> <br><br>
+            <input type="file" id="hotelImage1"  class="form-control"
+                    (change)="img1($event)">
           </div>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <h3>RearView</h3>
+          <h3>Hotel Image 2 </h3>
           <div class="img-g">
-            <img src="" alt="" id="rearView-img-show"> <br><br>
-            <input type="file" id="rearView"  class="form-control"
-                   placeholder="RearView" (change)="RearView($event)">
+            <img src="" alt="" id="hotelImage2-img-show"> <br><br>
+            <input type="file" id="hotelImage2"  class="form-control"
+                    (change)="img2($event)">
           </div>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <h3>FontInterior</h3>
+          <h3>Hotel Image 3</h3>
           <div class="img-g">
-            <img src="" alt="" id="fontInterior-img-show"> <br><br>
-            <input type="file" id="fontInterior"  class="form-control"
-                   placeholder="FontInterior" (change)="FontInterior($event)">
+            <img src="" alt="" id="hotelImage3-img-show"> <br><br>
+            <input type="file" id="hotelImage3"  class="form-control"
+                    (change)="img3($event)">
           </div>
         </div>
-        &lt;!&ndash;<div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <h3>NicRear</h3>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>Hotel Image 4</h3>
           <div class="img-g">
-            <img src="" alt="" id="rearInterior-img-show"> <br><br>
-            <input type="file" id="rearInterior" name="nicRear" class="form-control"
-                   placeholder="RearInterior" (change)="RearInterior($event)">
+            <img src="" alt="" id="hotelImage4-img-show"> <br><br>
+            <input type="file" id="hotelImage4" name="nicRear" class="form-control"
+                    (change)="img4($event)">
           </div>
-        </div>&ndash;&gt;
-      </div>-->
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>Hotel Image 5</h3>
+          <div class="img-g">
+            <img src="" alt="" id="hotelImage5-img-show"> <br><br>
+            <input type="file" id="hotelImage5" name="nicRear" class="form-control"
+                   (change)="img5($event)">
+          </div>
+        </div>
+      </div>
+
+
+
       <br>
       <br>
       <div class="row">
         <div class="col-12 " style="display: flex;justify-content: flex-end">
-          <button mat-raised-button color="primary" >Save customer</button>
+          <button mat-raised-button color="primary" >Save Hotel</button>
         </div>
       </div>
     </div>
