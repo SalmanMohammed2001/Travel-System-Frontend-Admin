@@ -1,0 +1,22 @@
+.image-outer{
+  width: 100%;
+  height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+}
+.image-inner{
+  width: 100%;
+  height: 100%;
+
+
+  img{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+}
+
