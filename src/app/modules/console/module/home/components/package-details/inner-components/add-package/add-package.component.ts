@@ -2,6 +2,7 @@ import {AfterContentInit, AfterViewInit, Component, OnInit} from '@angular/core'
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {VehicleService} from "../../../../../../../../service/vehicle.service";
 import {HotelService} from "../../../../../../../../service/hotel.service";
+import {PackageDetailsService} from "../../../../../../../../service/package-details.service";
 
 @Component({
   selector: 'app-add-package',
@@ -10,7 +11,8 @@ import {HotelService} from "../../../../../../../../service/hotel.service";
 })
 export class AddPackageComponent{
 
-  constructor(private vehicleService:VehicleService,private hotelService:HotelService) {
+  constructor(private vehicleService:VehicleService,private hotelService:HotelService,
+              private packageService:PackageDetailsService) {
   }
 
   vehicleData=''
@@ -39,17 +41,7 @@ export class AddPackageComponent{
 
   })
 
-  category:any = this.form.get('category')?.value;
-  startDate = this.form.get('startDate')?.value;
-  endDate = this.form.get('endDate')?.value;
-  days = this.form.get('days')?.value;
-  night = this.form.get('night')?.value;
-  packageTravelArea = this.form.get('packageTravelArea')?.value;
-  packageNoAdult = this.form.get('packageNoAdult')?.value;
-  packageNoChildren = this.form.get('packageNoChildren')?.value;
-  packageTotalHeadCount = this.form.get('packageTotalHeadCount')?.value;
-  withPetOrNo = this.form.get('withPetOrNo')?.value;
-  packageValue = this.form.get('packageValue')?.value;
+
 
 
 
@@ -121,11 +113,50 @@ export class AddPackageComponent{
 
   }
 
+  hotelPriceList:Array<any>=[]
+  findHotel(id:any){
+    this.hotelService.findId(id).subscribe(res=>{
+     this.hotelPriceList=res.data
+    })
+  }
 
 
   crateData(){
- /*  let dataa=(this.myData)
-    console.log(dataa)*/
+    console.log(this.hotelData)
+    console.log(this.vehicleData)
+
+    const category:any = this.form.get('category')?.value;
+    const startDate = this.form.get('startDate')?.value;
+    const endDate = this.form.get('endDate')?.value;
+    const days = this.form.get('days')?.value;
+    const night = this.form.get('night')?.value;
+    const packageTravelArea = this.form.get('packageTravelArea')?.value;
+    const packageNoAdult = this.form.get('packageNoAdult')?.value;
+    const packageNoChildren = this.form.get('packageNoChildren')?.value;
+    const packageTotalHeadCount = this.form.get('packageTotalHeadCount')?.value;
+    const withPetOrNo = this.form.get('withPetOrNo')?.value;
+   const  packageValue = this.form.get('packageValue')?.value;
+
+
+    let setData = new FormData();
+    setData.append('category', category!)
+    setData.append('startDate', startDate!)
+    setData.append('endDate', endDate!)
+    setData.append('days', days!)
+    setData.append('night', night!)
+    setData.append('packageTravelArea', packageTravelArea!)
+    setData.append('packageNoAdult', packageNoAdult!)
+    setData.append('packageNoChildren', packageNoChildren!)
+    setData.append('packageTotalHeadCount', packageTotalHeadCount!)
+    setData.append('withPetOrNo', withPetOrNo!)
+    setData.append('packageValue', packageValue!)
+    setData.append('hotel', this.hotelData!)
+    setData.append('vehicle', this.vehicleData!)
+
+
+    this.packageService.save(setData).subscribe(res=>{
+      alert('save package')
+    })
 
   }
 

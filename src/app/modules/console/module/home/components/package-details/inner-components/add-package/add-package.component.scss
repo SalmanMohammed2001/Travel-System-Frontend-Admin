@@ -29,3 +29,13 @@ form{
 .img-g>input::placeholder{
   font-size: 10px!important;
 }
+.btn-outer {
+  //border: 1px solid red;
+  display: flex;
+  align-items: center;
+
+  button{
+
+    margin: 0 0 3px 15px;
+  }
+}

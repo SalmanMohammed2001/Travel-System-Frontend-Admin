@@ -33,7 +33,7 @@ export class AddHotelComponent implements OnInit {
 
   }
 
-  img4(event: any) {
+/*  img4(event: any) {
     let file = event.target.files[0]
     this.form.patchValue({hotelImage4: file})
 
@@ -43,7 +43,7 @@ export class AddHotelComponent implements OnInit {
     let file = event.target.files[0]
     this.form.patchValue({hotelImage5: file})
 
-  }
+  }*/
 
   form = new FormGroup({
     hotelName: new FormControl('', [Validators.required]),
@@ -91,8 +91,10 @@ export class AddHotelComponent implements OnInit {
     let hotelImage1 = this.form.get('hotelImage1')?.value
     let hotelImage2 = this.form.get('hotelImage2')?.value
     let hotelImage3 = this.form.get('hotelImage3')?.value
+/*
     let hotelImage4 = this.form.get('hotelImage4')?.value
     let hotelImage5 = this.form.get('hotelImage4')?.value
+*/
 
 
     let setData = new FormData();
@@ -115,9 +117,9 @@ export class AddHotelComponent implements OnInit {
     setData.append('images', hotelImage1!)
     setData.append('images', hotelImage2!)
     setData.append('images', hotelImage3!)
-    setData.append('images', hotelImage4!)
+    /*setData.append('images', hotelImage4!)
     setData.append('images', hotelImage5!)
-
+*/
 
 
     this.service.save(setData).subscribe(res=>{
