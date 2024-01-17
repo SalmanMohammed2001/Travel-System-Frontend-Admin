@@ -122,12 +122,53 @@ export class UpdateHotelComponent implements OnInit {
     let price2 = this.form.get('price2')?.value
     let price3 = this.form.get('price3')?.value
     let price4 = this.form.get('price4')?.value
-    let hotelImage1 = this.form.get('hotelImage1')?.value
-    let hotelImage2 = this.form.get('hotelImage2')?.value
-    let hotelImage3 = this.form.get('hotelImage3')?.value
-    let hotelImage4 = this.form.get('hotelImage4')?.value
-    let hotelImage5 = this.form.get('hotelImage4')?.value
-    let hotelStatus = this.form.get('hotelStatus')?.value
+    let hotelImage1:any = this.form.get('hotelImage1')?.value
+    let hotelImage2:any = this.form.get('hotelImage2')?.value
+    let hotelImage3:any = this.form.get('hotelImage3')?.value
+    let hotelImage4:any = this.form.get('hotelImage4')?.value
+    let hotelImage5:any = this.form.get('hotelImage4')?.value
+    let hotelStatus:any = this.form.get('hotelStatus')?.value
+
+
+
+
+
+    if(!hotelImage1){
+
+      // @ts-ignore
+      let  img1=  document.getElementById('hotelImage1-img-show').src
+      hotelImage1= this.dataURLtoFile(img1,'hotelImage1_img-show_jpg')
+
+    }
+    if(!hotelImage2){
+      // @ts-ignore
+      let img2=document.getElementById('hotelImage2-img-show').src
+      hotelImage2=this.dataURLtoFile(img2,'hotelImage2_img_show_jpg')
+
+    }
+
+
+    if(!hotelImage3){
+      // @ts-ignore
+      let img2=document.getElementById('hotelImage3-img-show').src
+      hotelImage3=this.dataURLtoFile(img2,'hotelImage3_img_show_jpg')
+
+    }
+    if(!hotelImage4){
+      // @ts-ignore
+      let img2=document.getElementById('hotelImage4-img-show').src
+      hotelImage4=this.dataURLtoFile(img2,'hotelImage4_img_show_jpg')
+
+    }
+    if(!hotelImage5){
+      // @ts-ignore
+      let img2=document.getElementById('hotelImage5-img-show').src
+      hotelImage5=this.dataURLtoFile(img2,'hotelImage5_img_show_jpg')
+
+    }
+
+
+
 
 
     let setData = new FormData();
@@ -138,7 +179,6 @@ export class UpdateHotelComponent implements OnInit {
     setData.append('hotelMapLink', hotelMapLink!)
     setData.append('hotelAddress', hotelAddress!)
     setData.append('contact1', contact1!)
-    setData.append('contact2', contact2!)
     setData.append('contact2', contact2!)
     setData.append('hotelEmail', hotelEmail!)
     setData.append('option1', option1!)
@@ -158,12 +198,23 @@ export class UpdateHotelComponent implements OnInit {
 
 
 
-    this.service.save(setData).subscribe(res=>{
-      alert('save')
+    this.service.update(setData).subscribe(res=>{
+      alert('update')
     })
   }
 
 
+  dataURLtoFile(dataurl:any, filename:any) {
+    var arr = dataurl.split(','),
+      mime = arr[0].match(/:(.*?);/)[1],
+      bstr = atob(arr[arr.length - 1]),
+      n = bstr.length,
+      u8arr = new Uint8Array(n);
+    while(n--){
+      u8arr[n] = bstr.charCodeAt(n);
+    }
+    return new File([u8arr], filename, {type:mime});
+  }
 
 }
 

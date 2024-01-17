@@ -103,7 +103,6 @@ export class AddHotelComponent implements OnInit {
     setData.append('hotelAddress', hotelAddress!)
     setData.append('contact1', contact1!)
     setData.append('contact2', contact2!)
-    setData.append('contact2', contact2!)
     setData.append('hotelEmail', hotelEmail!)
     setData.append('option1', option1!)
     setData.append('option2', option2!)
