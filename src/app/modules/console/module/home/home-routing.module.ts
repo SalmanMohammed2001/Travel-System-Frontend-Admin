@@ -35,6 +35,16 @@ import {AllHotelComponent} from "./components/hotel/inner-components/all-hotel/a
 import {FindHotelComponent} from "./components/hotel/inner-components/find-hotel/find-hotel.component";
 import {UpdateHotelComponent} from "./components/hotel/inner-components/update-hotel/update-hotel.component";
 import {DeleteHotelComponent} from "./components/hotel/inner-components/delete-hotel/delete-hotel.component";
+import {PackageDetailsComponent} from "./components/package-details/package-details.component";
+import {AddPackageComponent} from "./components/package-details/inner-components/add-package/add-package.component";
+import {AllPackageComponent} from "./components/package-details/inner-components/all-package/all-package.component";
+import {FindPackageComponent} from "./components/package-details/inner-components/find-package/find-package.component";
+import {
+  UpdatePackageComponent
+} from "./components/package-details/inner-components/update-package/update-package.component";
+import {
+  DeletePackageComponent
+} from "./components/package-details/inner-components/delete-package/delete-package.component";
 
 
 
@@ -81,6 +91,15 @@ const routes: Routes = [
           {path: 'update',component:UpdateHotelComponent },
           {path: 'delete',component:DeleteHotelComponent },
         ]},
+      {path:'package/details',component:PackageDetailsComponent,children:[
+          {path: '',redirectTo: "all" , pathMatch:"full" },
+          {path: 'new',component:AddPackageComponent },
+          {path: 'all',component:AllPackageComponent },
+          {path: 'find',component:FindPackageComponent },
+          {path: 'update',component:UpdatePackageComponent },
+          {path: 'delete',component:DeletePackageComponent },
+        ]},
+
     ]},
 ];
 

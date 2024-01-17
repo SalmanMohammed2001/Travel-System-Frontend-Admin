@@ -1,1 +1,343 @@
-<p>add-package works!</p>
+<div class="customer-outer">
+  <form action="" [formGroup]="form"  (ngSubmit)="crateData()"  >
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Package category</mat-label>
+            <select formControlName="category" matNativeControl required  (click)="loadRegular()" >
+              <option value="regular" >Regular</option>
+              <option value="mid_level">Mid-level</option>
+              <option value="luxury">Luxury</option>
+              <option value="super_Luxury"> Super Luxury</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#extraLargeModal1">Show Vehicle List</button>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#extraLargeModal2">Show Hotel List</button>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Star tDate</mat-label>
+            <input  formControlName="startDate"  matInput placeholder="startDate" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>End Date</mat-label>
+            <input  formControlName="endDate"  matInput placeholder="endDate" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Days</mat-label>
+            <input  formControlName="days"   matInput placeholder="days" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Night</mat-label>
+            <input formControlName="night"  matInput placeholder="night" >
+          </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>packageTravelArea</mat-label>
+            <input  formControlName="packageTravelArea"   matInput placeholder="packageTravelArea" >
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>PackageNoAdult</mat-label>
+            <input  formControlName="packageNoAdult"   matInput placeholder="packageNoAdult" >
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>packageNoChildren</mat-label>
+            <input  formControlName="packageNoChildren"   matInput placeholder="packageNoChildren" >
+          </mat-form-field>
+        </div>
+
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>packageTotalHeadCount</mat-label>
+            <input  formControlName="packageTotalHeadCount"   matInput placeholder="packageTotalHeadCount" >
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>WithPetOrNo</mat-label>
+            <select formControlName="withPetOrNo" matNativeControl required>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>PackageValue</mat-label>
+            <input  formControlName="packageValue"   matInput placeholder="packageValue" >
+          </mat-form-field>
+        </div>
+
+
+
+
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" >
+          <mat-form-field class="full-width" appearance="outline">
+            <select  matNativeControl required [(ngModel)]="vehicleData"  [ngModelOptions]="{standalone: true}" >
+              <option *ngFor="let data of list"  >{{data.vehicleId}}</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+
+
+      </div>
+      <hr>
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-12 " style="display: flex;justify-content: flex-end">
+          <button mat-raised-button color="primary" >Save Package</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <br>
+  <br>
+</div>
+
+
+
+
+<div id="extraLargeModal1" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Extra Large Modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+
+
+        <div class="container " style="padding: 20px"  *ngFor="let tempData of list">
+          <div class="row">
+            <table class="table table hover col-12 col-sm-6 col-md-4 col-lg-3">
+              <thead>
+              <tr>
+                <th>Id</th>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Type</th>
+                <th>Hybrid</th>
+                <th>FuelType</th>
+                <th>Transmission</th>
+                <th>PriceFor1Km</th>
+                <th>PriceFor100Km</th>
+                <th>SeatCapacity</th>
+                <th>Qty</th>
+                <!--                <th>Option</th>-->
+
+              </tr>
+              </thead>
+              <tbody>
+             <tr >
+                <td>{{tempData.vehicleId}}</td>
+                <td>{{tempData.vehicleName}}</td>
+                <td>{{tempData.vehicleCategory}}</td>
+                <td>{{tempData.vehicleType}}</td>
+                <td>{{tempData.vehicleHybrid}}</td>
+                <td>{{tempData.vehicleFuelType}}</td>
+                <td>{{tempData.vehicleTransmission}}</td>
+                <td>{{tempData.vehiclePriceFor1Km}}</td>
+                <td>{{tempData.vehiclePriceFor100Km}}</td>
+                <td>{{tempData.vehicleSeatCapacity}}</td>
+                <td>{{tempData.vehicleQty}}</td>
+                <td>
+                <!--  &lt;!&ndash;  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="findId(tempData.vehicleId)">
+                      image
+                    </button>&ndash;&gt;-->
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="dow">
+           <h2 style="text-align: center">Vehicle Images</h2>
+            <div style="width: 100%;height: 300px;display: flex;align-items: center;justify-content:space-between;padding: 30px">
+              <img src="data:image/jpeg;base64,{{tempData.vehicleImages[0]}}" alt="" style="width: 400px;padding: 10px" >
+              <img src="data:image/jpeg;base64,{{tempData.vehicleImages[1]}}" alt="" style="width: 400px;padding: 10px">
+              <img src="data:image/jpeg;base64,{{tempData.vehicleImages[2]}}" alt="" style="width: 400px;padding: 10px">
+
+
+          </div>
+        </div>
+          <hr style="color: red">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<div id="extraLargeModal2" class="modal fade" tabindex="-1" role="dialog">
+<div class="modal-dialog modal-xl">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Extra Large Modal</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+    <div class="modal-body">
+
+
+      <div class="container " style="padding: 20px"  *ngFor="let tempData of hotelDataList">
+        <div class="row">
+          <table class="table table hover col-12 col-sm-6 col-md-4 col-lg-3">
+            <thead>
+            <tr>
+
+              <th>Id</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>PetAllowed</th>
+              <th>Address</th>
+              <th>Contact1</th>
+              <th>Contact2</th>
+              <th>Email</th>
+              <td>Price</td>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr >
+              <td>{{tempData.hotelId}}</td>
+              <td>{{tempData.hotelName}}</td>
+              <td>{{tempData.hotelCategory}}</td>
+              <td>{{tempData.hotelPetAllowed}}</td>
+              <td>{{tempData.hotelAddress}}</td>
+              <td>{{tempData.hotelContact.contact1}}</td>
+              <td>{{tempData.hotelContact.contact2}}</td>
+              <td>{{tempData.hotelEmail}}</td>
+              <td>
+                <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#largeModal">Prices</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="dow">
+          <h2 style="text-align: center">Hotel Images</h2>
+          <div style="width: 100%;height: 300px;display: flex;align-items: center;justify-content:space-between;padding: 30px">
+            <img src="data:image/jpeg;base64,{{tempData.images[0]}}" alt="" style="width: 200px;padding: 10px" >
+            <img src="data:image/jpeg;base64,{{tempData.images[1]}}" alt="" style="width: 200px;padding: 10px" >
+            <img src="data:image/jpeg;base64,{{tempData.images[2]}}" alt="" style="width: 200px;padding: 10px" >
+            <img src="data:image/jpeg;base64,{{tempData.images[3]}}" alt="" style="width: 200px;padding: 10px" >
+            <img src="data:image/jpeg;base64,{{tempData.images[4]}}" alt="" style="width: 200px;padding: 10px" >
+
+
+
+          </div>
+        </div>
+        <hr style="color: red">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="largeModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Large Modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <table class="table table hover col-12 col-sm-6 col-md-4 col-lg-3">
+              <thead>
+              <tr>
+                <th>Options</th>
+                <th>Price</th>
+              </tr>
+
+              </thead>
+              <tbody *ngFor="let tempData of hotelDataList">
+              <tr>
+                <td>{{tempData.hotelPrices[0].priceKey}}</td>
+                <td>{{tempData.hotelPrices[0].priceValue}}</td>
+
+              </tr>
+
+              <tr>
+                <td>{{tempData.hotelPrices[1].priceKey}}</td>
+                <td>{{tempData.hotelPrices[1].priceValue}}</td>
+
+              </tr>
+
+              <tr>
+                <td>{{tempData.hotelPrices[2].priceKey}}</td>
+                <td>{{tempData.hotelPrices[2].priceValue}}</td>
+
+              </tr>
+
+              <tr>
+                <td>{{tempData.hotelPrices[3].priceKey}}</td>
+                <td>{{tempData.hotelPrices[3].priceValue}}</td>
+
+              </tr>
+
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
