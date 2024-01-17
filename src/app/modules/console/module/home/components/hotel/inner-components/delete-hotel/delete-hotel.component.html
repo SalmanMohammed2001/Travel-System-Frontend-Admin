@@ -1,1 +1,39 @@
-<p>delete-hotel works!</p>
+<div class="container " style="padding: 20px">
+  <div class="row">
+    <table class="table table hover col-12 col-sm-6 col-md-4 col-lg-3">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>PetAllowed</th>
+        <th>Address</th>
+        <th>Contact1</th>
+        <th>Email</th>
+        <td>Delete</td>
+
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tempData of list">
+        <td>{{tempData.hotelId}}</td>
+        <td>{{tempData.hotelName}}</td>
+        <td>{{tempData.hotelCategory}}</td>
+        <td>{{tempData.hotelPetAllowed}}</td>
+        <td>{{tempData.hotelAddress}}</td>
+        <td>{{tempData.hotelContact.contact1}}</td>
+
+        <td>{{tempData.hotelEmail}}</td>
+        <td>
+          <button mat-raised-button color="warn" (click)="deleteHotel(tempData.hotelId)">
+            <mat-icon>delete me</mat-icon>Delete</button>
+        </td>
+        <td>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
