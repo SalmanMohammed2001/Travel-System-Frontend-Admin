@@ -44,6 +44,12 @@ import { UpdateHotelComponent } from './components/hotel/inner-components/update
 import { FindHotelComponent } from './components/hotel/inner-components/find-hotel/find-hotel.component';
 import { AllHotelComponent } from './components/hotel/inner-components/all-hotel/all-hotel.component';
 import { DeleteHotelComponent } from './components/hotel/inner-components/delete-hotel/delete-hotel.component';
+import { PackageDetailsComponent } from './components/package-details/package-details.component';
+import { AddPackageComponent } from './components/package-details/inner-components/add-package/add-package.component';
+import { AllPackageComponent } from './components/package-details/inner-components/all-package/all-package.component';
+import { DeletePackageComponent } from './components/package-details/inner-components/delete-package/delete-package.component';
+import { UpdatePackageComponent } from './components/package-details/inner-components/update-package/update-package.component';
+import { FindPackageComponent } from './components/package-details/inner-components/find-package/find-package.component';
 
 
 
@@ -82,6 +88,12 @@ import { DeleteHotelComponent } from './components/hotel/inner-components/delete
     FindHotelComponent,
     AllHotelComponent,
     DeleteHotelComponent,
+    PackageDetailsComponent,
+    AddPackageComponent,
+    AllPackageComponent,
+    DeletePackageComponent,
+    UpdatePackageComponent,
+    FindPackageComponent,
 
   ],
   exports: [
