@@ -1,1 +1,74 @@
-<p>add-booking works!</p>
+<div class="customer-outer">
+  <form action=""   >
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+          <div class="input-group">
+            <input
+              class="form-control"
+              placeholder="yyyy-mm-dd"
+              name="dp"
+              [(ngModel)]="model"
+              ngbDatepicker
+              #d="ngbDatepicker"
+            />
+            <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" >
+        <mat-form-field class="full-width" appearance="outline">
+          <select  matNativeControl required [(ngModel)]="customerData"  [ngModelOptions]="{standalone: true}"  (click)="loadAllCustomer($event)">
+            <option disabled> select Customer</option>
+            <option *ngFor="let data of customerList"  >{{data.email}}</option>
+          </select>
+        </mat-form-field>
+      </div>
+
+<!--      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>DriverImage</h3>
+          <div class="img-g">
+            <img src="" alt="" id="driverImage-img-show"> <br><br>
+            <input type="file" id="driverImage"  class="form-control"
+                   placeholder="FrontView" (change)="driverImage($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>LicenseImageFront</h3>
+          <div class="img-g">
+            <img src="" alt="" id="licenseImageFront-img-show"> <br><br>
+            <input type="file" id="licenseImageFront"  class="form-control"
+                   placeholder="RearView" (change)="licenseImageFront($event)">
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <h3>LicenseImageRear</h3>
+          <div class="img-g">
+            <img src="" alt="" id="licenseImageRear-img-show"> <br><br>
+            <input type="file" id="licenseImageRear"  class="form-control"
+                   placeholder="FontInterior" (change)="licenseImageRear($event)">
+          </div>
+        </div>
+      </div>-->
+      <br>
+      <br>
+      <div class="row">
+        <div class="col-12 " style="display: flex;justify-content: flex-end">
+          <button mat-raised-button color="primary" >Save Driver</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <br>
+  <br>
+</div>
+
+
+
+
+
+
+

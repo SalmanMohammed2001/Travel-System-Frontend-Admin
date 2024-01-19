@@ -11,6 +11,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+
+
 
 
 @NgModule({
@@ -29,7 +32,11 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule
 
-  ]
+  ],
+  providers: [],
 })
 export class ConsoleModule { }

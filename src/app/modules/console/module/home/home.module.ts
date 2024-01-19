@@ -9,7 +9,7 @@ import {MatButtonModule} from "@angular/material/button";
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-;
+
 import {MatIconModule} from "@angular/material/icon";
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -56,6 +56,9 @@ import { DeleteBookingComponent } from './components/booking/inner-components/de
 import { UpdateBookingComponent } from './components/booking/inner-components/update-booking/update-booking.component';
 import { FindBookingComponent } from './components/booking/inner-components/find-booking/find-booking.component';
 import { AllBookingComponent } from './components/booking/inner-components/all-booking/all-booking.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {NgbDatepicker, NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap";
 
 
 
@@ -111,16 +114,21 @@ import { AllBookingComponent } from './components/booking/inner-components/all-b
   exports: [
 
   ],
-    imports: [
-        CommonModule,
-        HomeRoutingModule,
-        MatInputModule,
-        MatButtonModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        FormsModule,
-        MatIconModule,
-        MatSelectModule
-    ]
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    MatInputModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    MatIconModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    NgbDatepicker,
+    NgbInputDatepicker,
+
+  ]
 })
 export class HomeModule { }
