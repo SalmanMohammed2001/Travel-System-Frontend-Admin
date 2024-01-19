@@ -71,42 +71,50 @@
 
         <div class="col-12 col-sm-6 col-md-4 col-lg-3  btn-outer">
           <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#extraLargeModal1" type="button">view Package List</button>
-
         </div>
+      </div>
 
+      <div class="row">
 
-
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Package Category </mat-label>
+            <input  formControlName="packageCategory"  matInput placeholder="Package Category" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Package Start Data </mat-label>
+            <input  formControlName="packageStartDate"  matInput placeholder="Package startDate" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Package End Date </mat-label>
+            <input  formControlName="packageEndDate"  matInput placeholder="Package endDate" >
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <mat-form-field  class="full-width"   appearance="outline">
+            <mat-label>Package Value </mat-label>
+            <input  formControlName="packageValue"  matInput placeholder="Package Value" >
+          </mat-form-field>
+        </div>
       </div>
 
 
 
+          <div class="row">
+              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <h3>bankSlip</h3>
+                <div class="img-g">
+                  <img src="" alt="" id="bankSlip-img-show"> <br><br>
+                  <input type="file" id="bankSlip"  class="form-control"
+                         placeholder="bankSlip" (change)="bankSlip($event)">
+                </div>
+              </div>
 
-      <!--      <div class="row">
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <h3>DriverImage</h3>
-                <div class="img-g">
-                  <img src="" alt="" id="driverImage-img-show"> <br><br>
-                  <input type="file" id="driverImage"  class="form-control"
-                         placeholder="FrontView" (change)="driverImage($event)">
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <h3>LicenseImageFront</h3>
-                <div class="img-g">
-                  <img src="" alt="" id="licenseImageFront-img-show"> <br><br>
-                  <input type="file" id="licenseImageFront"  class="form-control"
-                         placeholder="RearView" (change)="licenseImageFront($event)">
-                </div>
-              </div>
-              <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <h3>LicenseImageRear</h3>
-                <div class="img-g">
-                  <img src="" alt="" id="licenseImageRear-img-show"> <br><br>
-                  <input type="file" id="licenseImageRear"  class="form-control"
-                         placeholder="FontInterior" (change)="licenseImageRear($event)">
-                </div>
-              </div>
-            </div>-->
+            </div>
       <br>
       <br>
       <div class="row">

@@ -78,7 +78,12 @@ export class AddBookingComponent implements  OnInit{
     }else {
       this.packageService.findId(packageId).subscribe(res=>{
         this.findPackageList=res.data
-        console.log(this.findPackageList)
+        this.form.patchValue({
+          packageCategory:res.data[0].category,
+          packageStartDate:res.data[0].travelDuration.startDate,
+          packageEndDate:res.data[0].travelDuration.endDate,
+          packageValue:res.data[0].packageValue
+        })
       })
     }
 
@@ -87,6 +92,12 @@ export class AddBookingComponent implements  OnInit{
 
 
 
+  bankSlip(event:any){
+    const file=event.target.files[0]
+    this.form.patchValue({
+      bankSlip:file
+    })
+  }
 
 
 
@@ -108,5 +119,10 @@ export class AddBookingComponent implements  OnInit{
     customerName: new FormControl('', [Validators.required]),
     customerContact: new FormControl('', [Validators.required]),
     customerAddress: new FormControl('', [Validators.required]),
+    packageCategory: new FormControl('', [Validators.required]),
+    packageStartDate: new FormControl('', [Validators.required]),
+    packageEndDate: new FormControl('', [Validators.required]),
+    packageValue: new FormControl('', [Validators.required]),
+    bankSlip: new FormControl('', [Validators.required]),
   })
 }
