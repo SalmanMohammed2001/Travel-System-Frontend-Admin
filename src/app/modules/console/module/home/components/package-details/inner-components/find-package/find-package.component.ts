@@ -17,8 +17,8 @@ export class FindPackageComponent implements OnInit{
 
 
   list2:Array<any>=[]
-  findHotel(id:any){
-    this.packageService.findId(id).subscribe(res=>{
+  find(event:any){
+    this.packageService.findId(event.target.value).subscribe(res=>{
       this.list2=res.data
       console.log(this.list2)
     })

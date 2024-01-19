@@ -50,6 +50,12 @@ import { AllPackageComponent } from './components/package-details/inner-componen
 import { DeletePackageComponent } from './components/package-details/inner-components/delete-package/delete-package.component';
 import { UpdatePackageComponent } from './components/package-details/inner-components/update-package/update-package.component';
 import { FindPackageComponent } from './components/package-details/inner-components/find-package/find-package.component';
+import { BookingComponent } from './components/booking/booking.component';
+import { AddBookingComponent } from './components/booking/inner-components/add-booking/add-booking.component';
+import { DeleteBookingComponent } from './components/booking/inner-components/delete-booking/delete-booking.component';
+import { UpdateBookingComponent } from './components/booking/inner-components/update-booking/update-booking.component';
+import { FindBookingComponent } from './components/booking/inner-components/find-booking/find-booking.component';
+import { AllBookingComponent } from './components/booking/inner-components/all-booking/all-booking.component';
 
 
 
@@ -94,6 +100,12 @@ import { FindPackageComponent } from './components/package-details/inner-compone
     DeletePackageComponent,
     UpdatePackageComponent,
     FindPackageComponent,
+    BookingComponent,
+    AddBookingComponent,
+    DeleteBookingComponent,
+    UpdateBookingComponent,
+    FindBookingComponent,
+    AllBookingComponent,
 
   ],
   exports: [

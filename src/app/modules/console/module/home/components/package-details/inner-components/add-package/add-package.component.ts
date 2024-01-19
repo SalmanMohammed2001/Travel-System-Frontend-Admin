@@ -60,8 +60,13 @@ export class AddPackageComponent{
       })
 
       this.hotelService.findHotelCategory('3_Star_and_2_Star').subscribe(res=>{
-        this.hotelDataList=res.data
-        console.log(this.hotelDataList)
+        if(res.data!=null){
+          this.hotelDataList=res.data
+          console.log(this.hotelDataList)
+        }else {
+          this.list=[]
+        }
+
       })
 
 
@@ -73,10 +78,13 @@ export class AddPackageComponent{
       })
 
       this.hotelService.findHotelCategory('3_Star_and_4_Star').subscribe(res=>{
-        this.hotelDataList=res.data
-        console.log(this.hotelDataList)
+        if(res.data!=null){
+          this.hotelDataList=res.data
+          console.log(this.hotelDataList)
+        }else {
+          this.list=[]
+        }
       })
-
 
 
     }else  if (this.form.value.category==='luxury'){
@@ -87,10 +95,13 @@ export class AddPackageComponent{
       })
 
       this.hotelService.findHotelCategory('4_Star_and_5_Star').subscribe(res=>{
-        this.hotelDataList=res.data
-        console.log(this.hotelDataList)
+        if(res.data!=null){
+          this.hotelDataList=res.data
+          console.log(this.hotelDataList)
+        }else {
+          this.list=[]
+        }
       })
-
 
 
 
@@ -101,10 +112,13 @@ export class AddPackageComponent{
       })
 
       this.hotelService.findHotelCategory('5_Star').subscribe(res=>{
-        this.hotelDataList=res.data
-        console.log(this.hotelDataList)
+        if(res.data!=null){
+          this.hotelDataList=res.data
+          console.log(this.hotelDataList)
+        }else {
+          this.list=[]
+        }
       })
-
 
 
     }
@@ -117,6 +131,7 @@ export class AddPackageComponent{
   findHotel(id:any){
     this.hotelService.findId(id).subscribe(res=>{
      this.hotelPriceList=res.data
+      console.log(this.hotelPriceList)
     })
   }
 

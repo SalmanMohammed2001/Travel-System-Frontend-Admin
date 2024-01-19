@@ -1,1 +1,46 @@
-<p>delete-package works!</p>
+<div class="container " style="padding: 20px">
+  <div class="row">
+    <table class="table table hover col-12 col-sm-6 col-md-4 col-lg-3">
+      <thead>
+      <tr>
+        <th>packageId</th>
+        <th>category</th>
+        <th>startDate</th>
+        <th>endDate</th>
+        <th>days</th>
+        <th>night</th>
+        <th>packageTravelArea</th>
+        <th>packageNoAdult</th>
+        <td>packageNoChildren</td>
+        <td>withPetOrNo</td>
+        <td>packageValue</td>
+        <td>Delete</td>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tempData of list">
+        <td>{{tempData.packageId}}</td>
+        <td>{{tempData.category}}</td>
+        <td>{{tempData.travelDuration.startDate}}</td>
+        <td>{{tempData.travelDuration.endDate}}</td>
+        <td>{{tempData.travelDuration.days}}</td>
+        <td>{{tempData.travelDuration.night}}</td>
+        <td>{{tempData.packageTravelArea}}</td>
+        <td>{{tempData.packageNoAdult}}</td>
+        <td>{{tempData.packageNoChildren}}</td>
+        <td>{{tempData.withPetOrNo}}</td>
+        <td>{{tempData.packageValue}}</td>
+        <td>
+
+          <button mat-raised-button color="warn" (click)="delete(tempData.packageId)"> <mat-icon>delete me</mat-icon> Delete </button>
+
+        </td>
+        <td>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
