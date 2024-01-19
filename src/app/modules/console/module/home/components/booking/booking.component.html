@@ -1,1 +1,16 @@
-<p>booking works!</p>
+
+<div class="customer-outer">
+  <div class="btn-outer">
+    <button mat-raised-button routerLink="/console/booking/all">All</button> |
+    <button mat-raised-button color="accent" routerLink="/console/booking/find">Find</button> |
+    <button mat-raised-button color="primary" routerLink="/console/booking/new">New</button> |
+    <button mat-raised-button color="warn" routerLink="/console/booking/delete">Delete</button> |
+    <button mat-raised-button color="primary" routerLink="/console/booking/update">Update</button>
+  </div>
+
+  <div class="router-inner">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+

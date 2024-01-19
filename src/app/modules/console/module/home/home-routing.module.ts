@@ -45,6 +45,12 @@ import {
 import {
   DeletePackageComponent
 } from "./components/package-details/inner-components/delete-package/delete-package.component";
+import {BookingComponent} from "./components/booking/booking.component";
+import {AddBookingComponent} from "./components/booking/inner-components/add-booking/add-booking.component";
+import {AllBookingComponent} from "./components/booking/inner-components/all-booking/all-booking.component";
+import {FindBookingComponent} from "./components/booking/inner-components/find-booking/find-booking.component";
+import {UpdateBookingComponent} from "./components/booking/inner-components/update-booking/update-booking.component";
+import {DeleteBookingComponent} from "./components/booking/inner-components/delete-booking/delete-booking.component";
 
 
 
@@ -99,6 +105,15 @@ const routes: Routes = [
           {path: 'update',component:UpdatePackageComponent },
           {path: 'delete',component:DeletePackageComponent },
         ]},
+      {path:'booking',component:BookingComponent,children:[
+          {path: '',redirectTo: "all" , pathMatch:"full" },
+          {path: 'new',component:AddBookingComponent },
+          {path: 'all',component:AllBookingComponent },
+          {path: 'find',component:FindBookingComponent },
+          {path: 'update',component:UpdateBookingComponent },
+          {path: 'delete',component:DeleteBookingComponent},
+
+        ]}
 
     ]},
 ];
