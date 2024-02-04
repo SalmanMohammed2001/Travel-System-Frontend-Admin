@@ -18,10 +18,17 @@ export class AllHotelComponent  implements OnInit{
 
   }
 
-
+  imageList:string=''
   findAll(){
     this.service.findAll().subscribe(res=>{
       this.list=res.data
+     /* for (let i = 0; i <this.list.length ; i++) {
+        console.log(this.list[i].hotelFrontImage)
+        console.log('--------------')
+        // this.imageList=this.list[i].images
+      }*/
+
+      console.log(this.list)
     })
   }
 

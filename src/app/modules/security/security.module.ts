@@ -7,7 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -17,13 +17,14 @@ import {FormsModule} from "@angular/forms";
     LoginComponent,
 
   ],
-  imports: [
-    CommonModule,
-    SecurityRoutingModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        SecurityRoutingModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        FormsModule,
+        ReactiveFormsModule
+    ]
 })
 export class SecurityModule { }

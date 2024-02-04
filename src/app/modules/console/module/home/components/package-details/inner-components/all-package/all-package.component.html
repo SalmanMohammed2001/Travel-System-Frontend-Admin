@@ -33,11 +33,11 @@
         <td>{{tempData.withPetOrNo}}</td>
         <td>{{tempData.packageValue}}</td>
         <td>
-          <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#extraLargeModal1"  (click)="findHotel(tempData.packageId)">Show Vehicle List</button>
+          <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#extraLargeModal1"  (click)="findData(tempData.packageId)">Show Vehicle List</button>
 
         </td>
         <td>
-          <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#extraLargeModal2"  (click)="findHotel(tempData.packageId)">Show Hotel List</button>
+          <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#extraLargeModal2"  (click)="findHotel(tempData.hotel.hotelId)">Show Hotel List</button>
         </td>
       </tr>
       </tbody>
@@ -100,9 +100,9 @@
           <div class="dow">
             <h2 style="text-align: center">Vehicle Images</h2>
             <div style="width: 100%;height: 300px;display: flex;align-items: center;justify-content:space-between;padding: 30px">
-              <img src="data:image/jpeg;base64,{{tempData.vehicle.vehicleImages[0]}}" alt="" style="width: 400px;padding: 10px" >
-              <img src="data:image/jpeg;base64,{{tempData.vehicle.vehicleImages[1]}}" alt="" style="width: 400px;padding: 10px">
-              <img src="data:image/jpeg;base64,{{tempData.vehicle.vehicleImages[2]}}" alt="" style="width: 400px;padding: 10px">
+              <img src="data:image/jpeg;base64,{{tempData.vehicle.vehicleImages[0]}}" alt="" style="width: 200px;padding: 10px" >
+              <img src="data:image/jpeg;base64,{{tempData.vehicle.vehicleImages[1]}}" alt="" style="width: 200px;padding: 10px">
+              <img src="data:image/jpeg;base64,{{tempData.vehicle.vehicleImages[2]}}" alt="" style="width: 200px;padding: 10px">
 
 
             </div>
@@ -129,7 +129,7 @@
       <div class="modal-body">
 
 
-        <div class="container " style="padding: 20px"  *ngFor="let tempData of list2">
+        <div class="container " style="padding: 20px"  *ngFor="let tempData of listHotelArray">
           <div class="row">
             <table class="table table hover col-12 col-sm-6 col-md-4 col-lg-3">
               <thead>
@@ -147,16 +147,16 @@
 
               </tr>
               </thead>
-              <tbody>
+              <tbody >
               <tr >
-                <td>{{tempData.hotel.hotelId}}</td>
-                <td>{{tempData.hotel.hotelName}}</td>
-                <td>{{tempData.hotel.hotelCategory}}</td>
-                <td>{{tempData.hotel.hotelPetAllowed}}</td>
-                <td>{{tempData.hotel.hotelAddress}}</td>
-                <td>{{tempData.hotel.hotelContact.contact1}}</td>
-                <td>{{tempData.hotel.hotelContact.contact2}}</td>
-                <td>{{tempData.hotel.hotelEmail}}</td>
+                <td>{{tempData.hotelId}}</td>
+                <td>{{tempData.hotelName}}</td>
+                <td>{{tempData.hotelCategory}}</td>
+                <td>{{tempData.hotelPetAllowed}}</td>
+                <td>{{tempData.hotelAddress}}</td>
+                <td>{{tempData.hotelContact.contact1}}</td>
+                <td>{{tempData.hotelContact.contact2}}</td>
+                <td>{{tempData.hotelEmail}}</td>
                 <td>
                   <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#largeModal" (click)="findHotel(tempData.packageId)">Prices</button>
                 </td>
@@ -167,9 +167,9 @@
           <div class="dow">
             <h2 style="text-align: center">Hotel Images</h2>
             <div style="width: 100%;height: 300px;display: flex;align-items: center;justify-content:space-between;padding: 30px">
-              <img src="data:image/jpeg;base64,{{tempData.hotel.images[0]}}" alt="" style="width: 200px;padding: 10px" >
-              <img src="data:image/jpeg;base64,{{tempData.hotel.images[1]}}" alt="" style="width: 200px;padding: 10px" >
-              <img src="data:image/jpeg;base64,{{tempData.hotel.images[2]}}" alt="" style="width: 200px;padding: 10px" >
+              <img src="data:image/jpeg;base64,{{tempData.images[0]}}" alt="" style="width: 200px;padding: 10px" >
+              <img src="data:image/jpeg;base64,{{tempData.images[1]}}" alt="" style="width: 200px;padding: 10px" >
+              <img src="data:image/jpeg;base64,{{tempData.images[2]}}" alt="" style="width: 200px;padding: 10px" >
 
 
 
@@ -209,26 +209,26 @@
               </thead>
               <tbody *ngFor="let tempData of list2">
               <tr>
-                <td>{{tempData.hotel.hotelPrices[0].priceKey}}</td>
-                <td>{{tempData.hotel.hotelPrices[0].priceValue}}</td>
+                <td>{{tempData.hotelPrices[0].priceKey}}</td>
+                <td>{{tempData.hotelPrices[0].priceValue}}</td>
 
               </tr>
 
               <tr>
-                <td>{{tempData.hotel.hotelPrices[1].priceKey}}</td>
-                <td>{{tempData.hotel.hotelPrices[1].priceValue}}</td>
+                <td>{{tempData.hotelPrices[1].priceKey}}</td>
+                <td>{{tempData.hotelPrices[1].priceValue}}</td>
 
               </tr>
 
               <tr>
-                <td>{{tempData.hotel.hotelPrices[2].priceKey}}</td>
-                <td>{{tempData.hotel.hotelPrices[2].priceValue}}</td>
+                <td>{{tempData.hotelPrices[2].priceKey}}</td>
+                <td>{{tempData.hotelPrices[2].priceValue}}</td>
 
               </tr>
 
               <tr>
-                <td>{{tempData.hotel.hotelPrices[3].priceKey}}</td>
-                <td>{{tempData.hotel.hotelPrices[3].priceValue}}</td>
+                <td>{{tempData.hotelPrices[3].priceKey}}</td>
+                <td>{{tempData.hotelPrices[3].priceValue}}</td>
 
               </tr>
 

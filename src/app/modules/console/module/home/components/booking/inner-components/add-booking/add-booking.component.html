@@ -1,5 +1,5 @@
 <div class="customer-outer">
-  <form action=""   [formGroup]="form" >
+  <form action=""   [formGroup]="form"  (ngSubmit)="createData()"  >
     <div class="container">
       <div class="row">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -79,30 +79,28 @@
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <mat-form-field  class="full-width"   appearance="outline">
             <mat-label>Package Category </mat-label>
-            <input  formControlName="packageCategory"  matInput placeholder="Package Category" >
+            <input  formControlName="packageCategory"  matInput placeholder="Package Category"  [(ngModel)]="pk_category"  >
           </mat-form-field>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <mat-form-field  class="full-width"   appearance="outline">
             <mat-label>Package Start Data </mat-label>
-            <input  formControlName="packageStartDate"  matInput placeholder="Package startDate" >
+            <input  formControlName="packageStartDate"  matInput placeholder="Package startDate"  [(ngModel)]="st_date">
           </mat-form-field>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <mat-form-field  class="full-width"   appearance="outline">
             <mat-label>Package End Date </mat-label>
-            <input  formControlName="packageEndDate"  matInput placeholder="Package endDate" >
+            <input  formControlName="packageEndDate"  matInput placeholder="Package endDate"  [(ngModel)]="ed_date" >
           </mat-form-field>
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <mat-form-field  class="full-width"   appearance="outline">
             <mat-label>Package Value </mat-label>
-            <input  formControlName="packageValue"  matInput placeholder="Package Value" >
+            <input  formControlName="packageValue"  matInput placeholder="Package Value"  [(ngModel)]="pk_value">
           </mat-form-field>
         </div>
       </div>
-
-
 
           <div class="row">
               <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -113,13 +111,51 @@
                          placeholder="bankSlip" (change)="bankSlip($event)">
                 </div>
               </div>
-
             </div>
+
+      <div class="row">
+        <div class="col-12" style="display: flex;justify-content: flex-end" >
+          <button mat-raised-button color="accent"  (click)="addToCart()"   type="button" > Add To Cart</button>
+        </div>
+      </div>
+
+      <br>
+      <br>
+
+      <div class="row">
+        <table class="table table hover  col-12 col-sm-6 col-md-4 col-lg-3">
+          <thead>
+          <tr>
+            <th>Id</th>
+            <th>Category</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Package Value</th>
+            <th>Option</th>
+          </tr>
+          </thead>
+          <tbody id="tblbody">
+          <tr *ngFor="let tempData of cartArray" >
+            <td>{{tempData.packageId}}</td>
+            <td>{{tempData.packageCategory}}</td>
+            <td>{{tempData.packageStartDate}}</td>
+            <td>{{tempData.packageEndDate}}</td>
+            <td>{{tempData.packageValue}}</td>
+            <td>
+              <button mat-raised-button color="warn"  (click)=" remove(tempData.packageId)">Remove</button>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+
+      </div>
       <br>
       <br>
       <div class="row">
-        <div class="col-12 " style="display: flex;justify-content: flex-end">
-          <button mat-raised-button color="primary" >Save Driver</button>
+        <div class="col-12 " style="display: flex;justify-content: space-between" >
+<!--          <h2>Total:{{total}}</h2>-->
+          <button mat-raised-button color="primary" t >Place Order</button>
         </div>
       </div>
     </div>

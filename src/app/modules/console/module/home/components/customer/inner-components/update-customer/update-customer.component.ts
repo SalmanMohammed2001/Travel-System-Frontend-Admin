@@ -26,7 +26,7 @@ export class UpdateCustomerComponent implements OnInit{
       this.form.patchValue({
         userId:res[0].userId,
         username:res[0].username,
-        password:res[0].password,
+     //   password:res[0].password,
         nic:res[0].nic,
         dob:res[0].dob,
         gender:res[0].gender,

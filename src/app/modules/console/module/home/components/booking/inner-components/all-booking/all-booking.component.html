@@ -1,1 +1,81 @@
-<p>all-booking works!</p>
+<div class="container " style="padding: 20px">
+  <div class="row">
+    <table class="table table hover col-12 col-sm-6 col-md-4 col-lg-3">
+      <thead>
+      <tr>
+        <th>Booking Id</th>
+        <th>Date</th>
+        <th>Booking Price</th>
+        <th>User</th>
+        <th>Booking Details</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let tempData of bookingList">
+        <td>{{tempData.bookingId}}</td>
+        <td>{{tempData.bookingDate}}</td>
+        <td>{{tempData.bookingPrice}}</td>
+        <td>{{tempData.user}}</td>
+
+        <td>
+       <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#extraLargeModal1"  (click)="findBooking(tempData.bookingId)">Show Vehicle List</button>
+
+        </td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="extraLargeModal1" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Extra Large Modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="container " style="padding: 20px" *ngFor="let tempData of findBookingList">
+          <div class="row">
+            <table class="table table hover col-12 col-sm-6 col-md-4 col-lg-3">
+              <thead>
+              <tr>
+                <th>bookingId</th>
+                <th>packageId</th>
+                <th>packageCategory</th>
+                <th>packageStartDate</th>
+                <th>packageEndDate</th>
+                <th>packageValue</th>
+                <th>userName</th>
+
+                <!--                <th>Option</th>-->
+
+              </tr>
+              </thead>
+              <tbody>
+              <tr >
+                <td>{{tempData.bookingId}}</td>
+                <td>{{tempData.packageId}}</td>
+                <td>{{tempData.packageCategory}}</td>
+                <td>{{tempData.packageStartDate}}</td>
+                <td>{{tempData.packageEndDate}}</td>
+                <td>{{tempData.packageValue}}</td>
+                <td>{{tempData.userName}}</td>
+
+              </tr>
+              </tbody>
+            </table>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

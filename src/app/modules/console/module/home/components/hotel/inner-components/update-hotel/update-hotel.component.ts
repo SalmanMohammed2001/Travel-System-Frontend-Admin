@@ -39,7 +39,7 @@ export class UpdateHotelComponent implements OnInit {
       price3:res.data[0].hotelPrices[2].priceValue ,
       option4:res.data[0].hotelPrices[3].priceKey,
       price4:res.data[0].hotelPrices[3].priceValue,
-      hotelStatus:res.data[0].hotelStatus ,
+      hotelStatus:res.data[0].hotelStatus
     })
     })
   }
@@ -64,7 +64,7 @@ export class UpdateHotelComponent implements OnInit {
 
   }
 
-  img4(event: any) {
+/*  img4(event: any) {
     let file = event.target.files[0]
     this.form.patchValue({hotelImage4: file})
 
@@ -74,7 +74,7 @@ export class UpdateHotelComponent implements OnInit {
     let file = event.target.files[0]
     this.form.patchValue({hotelImage5: file})
 
-  }
+  }*/
 
   form = new FormGroup({
     hotelId: new FormControl('', [Validators.required]),
@@ -97,9 +97,9 @@ export class UpdateHotelComponent implements OnInit {
     hotelImage1: new FormControl('', [Validators.required]),
     hotelImage2: new FormControl('', [Validators.required]),
     hotelImage3: new FormControl('', [Validators.required]),
-    hotelImage4: new FormControl('', [Validators.required]),
-    hotelImage5: new FormControl('', [Validators.required]),
-    hotelStatus: new FormControl('', [Validators.required]),
+  //  hotelImage4: new FormControl('', [Validators.required]),
+  //  hotelImage5: new FormControl('', [Validators.required]),
+   hotelStatus: new FormControl('', [Validators.required]),
 
 
   })
@@ -125,8 +125,8 @@ export class UpdateHotelComponent implements OnInit {
     let hotelImage1:any = this.form.get('hotelImage1')?.value
     let hotelImage2:any = this.form.get('hotelImage2')?.value
     let hotelImage3:any = this.form.get('hotelImage3')?.value
-    let hotelImage4:any = this.form.get('hotelImage4')?.value
-    let hotelImage5:any = this.form.get('hotelImage4')?.value
+   // let hotelImage4:any = this.form.get('hotelImage4')?.value
+   // let hotelImage5:any = this.form.get('hotelImage4')?.value
     let hotelStatus:any = this.form.get('hotelStatus')?.value
 
 
@@ -154,7 +154,7 @@ export class UpdateHotelComponent implements OnInit {
       hotelImage3=this.dataURLtoFile(img2,'hotelImage3_img_show_jpg')
 
     }
-    if(!hotelImage4){
+ /*   if(!hotelImage4){
       // @ts-ignore
       let img2=document.getElementById('hotelImage4-img-show').src
       hotelImage4=this.dataURLtoFile(img2,'hotelImage4_img_show_jpg')
@@ -166,7 +166,7 @@ export class UpdateHotelComponent implements OnInit {
       hotelImage5=this.dataURLtoFile(img2,'hotelImage5_img_show_jpg')
 
     }
-
+*/
 
 
 
@@ -192,8 +192,8 @@ export class UpdateHotelComponent implements OnInit {
     setData.append('images', hotelImage1!)
     setData.append('images', hotelImage2!)
     setData.append('images', hotelImage3!)
-    setData.append('images', hotelImage4!)
-    setData.append('images', hotelImage5!)
+ //   setData.append('images', hotelImage4!)
+   // setData.append('images', hotelImage5!)
     setData.append('hotelStatus', hotelStatus!)
 
 
