@@ -51,13 +51,7 @@ export class AddBookingComponent implements OnInit {
 
   // @ts-ignore
   loadAllCustomer(event: any) {
-
     let email = event.target.value
-
-
-    if (email === "null") {
-      return ""
-    } else {
       this.customerService.findEmail(email).subscribe(res => {
         this.form.patchValue({
           customerId: res[0].userId,
@@ -67,7 +61,9 @@ export class AddBookingComponent implements OnInit {
 
         })
       })
-    }
+
+
+
 
   }
 
@@ -85,21 +81,21 @@ export class AddBookingComponent implements OnInit {
   // @ts-ignore
   loadAllPackage(event: any) {
     let packageId = event.target.value
-
-    if (packageId === "null") {
-      return ""
-    } else {
       this.packageService.findId(packageId).subscribe(res => {
         this.findPackageList = res.data
-        this.form.patchValue({
+      this.form.patchValue({
           packageId: res.data[0].packageId,
           packageCategory: res.data[0].category,
           packageStartDate: res.data[0].travelDuration.startDate,
           packageEndDate: res.data[0].travelDuration.endDate,
           packageValue: res.data[0].packageValue
         })
+
+        console.log(this.findPackageList)
       })
-    }
+
+
+
 
 
   }
@@ -205,10 +201,9 @@ export class AddBookingComponent implements OnInit {
 
 
     let setData = new FormData();
-    setData.append('bookingDate',   this.model?.year + "/" + this.model?.month + "/" + this.model?.day);
-
     // @ts-ignore
     setData.append('bookingPrice', total!);
+    setData.append('bookingDate',   new Date().toLocaleDateString());
     setData.append('bankSlip', bankSlipData!);
     setData.append('user', customerId!);
      setData.append('bookingDetails',JSON.stringify(this.cartArray))

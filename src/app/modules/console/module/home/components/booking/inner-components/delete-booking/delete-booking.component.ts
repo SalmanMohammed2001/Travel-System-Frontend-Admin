@@ -1,10 +1,41 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {BookingService} from "../../../../../../../../service/booking.service";
 
 @Component({
   selector: 'app-delete-booking',
   templateUrl: './delete-booking.component.html',
   styleUrls: ['./delete-booking.component.scss']
 })
-export class DeleteBookingComponent {
+export class DeleteBookingComponent  implements OnInit{
+
+  constructor(private bookingService:BookingService) {
+  }
+
+  ngOnInit(): void {
+    this.findAll()
+  }
+
+  bookingList:Array<any>=[]
+  findAll(){
+    this.bookingService.findAll().subscribe(res=>{
+      this.bookingList=res.data
+    })
+  }
+
+  findBookingList:Array<any>=[]
+  findBooking(id:any){
+    this.bookingService.findId(id).subscribe(res=>{
+      this.findBookingList=res.data[0].bookingDetailsLis
+      console.log(this.findBookingList)
+      //console.log(res.data.bookingDetailsLis)
+    })
+  }
+
+  delete(id:string){
+    this.bookingService.delete(id).subscribe(res=>{
+      alert('delete')
+      this.findAll()
+    })
+  }
 
 }

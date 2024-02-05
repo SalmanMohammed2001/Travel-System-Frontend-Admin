@@ -25,7 +25,7 @@ export class AllBookingComponent implements OnInit{
   findBookingList:Array<any>=[]
   findBooking(id:any){
     this.bookingService.findId(id).subscribe(res=>{
-     this.findBookingList=res.data.bookingDetailsLis
+     this.findBookingList=res.data[0].bookingDetailsLis
       console.log(this.findBookingList)
       //console.log(res.data.bookingDetailsLis)
     })
